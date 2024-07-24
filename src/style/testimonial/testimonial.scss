@@ -1,0 +1,116 @@
+// Variable Declaration - Colors
+$background-color: #221f48;
+$lighter-background-color: #2b247c;
+$primary-color: #bdff00;
+$secondary-color: rgb(160, 209, 27);
+
+$design-color: #faff00;
+$mobile-dev-color: #00ff29;
+$web-dev-color: #00ffe0;
+
+$card-background: #2b2665;
+
+// Variable Declaration - Fonts
+$font-family: "Poppins", sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+#testimonialSection {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1rem;
+
+    @media screen and (max-width: 320px) {
+        padding: 5rem 0.5rem;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: $font-weight-medium;
+        padding-bottom: 2rem;
+
+        strong {
+            color: $primary-color;
+        }
+
+        @media screen and (max-width: 320px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .testimonials {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // text-align: center;
+
+        .testimonial-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .testimonialItem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            width: 70%;
+            padding: 1.5rem 1rem;
+            background-color: $card-background;
+
+            .profileImg {
+                width: 6rem;
+            }
+
+            .body {
+                font-weight: $font-weight-light;
+                width: 80%;
+                text-align: center;
+            }
+
+            .credit {
+                text-align: center;
+
+                .by {
+                    font-weight: $font-weight-semi-bold;
+                }
+
+                .relation {
+                    font-weight: $font-weight-light;
+                }
+            }
+
+            @media screen and (max-width: 640px) {
+                flex-grow: 1;
+            }
+
+            @media screen and (max-width: 320px) {
+                flex-grow: 1;
+                margin: 0 0.25rem;
+                .profileImg {
+                    width: 4rem;
+                }
+
+                .body {
+                    width: 100%;
+                    font-size: 0.8rem;
+                }
+
+                .credit {
+                    .by {
+                        font-size: 0.85rem;
+                    }
+
+                    .relation {
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
+    }
+}

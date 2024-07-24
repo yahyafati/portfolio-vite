@@ -1,35 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {useState, useEffect, useRef} from "react";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import "./style/app/App.scss";
+import LandingPage from "./component/landingPage/LandingPage";
+import Header from "./component/header/Header";
+import ContactPage from "./component/contact/ContactPage";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    const [currentPage, setCurrentPage] = useState("home");
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    const [goingUp, setGoingUP] = useState(false);
 
-export default App
+    const [scrollY, setScrollY] = useState(window.scrollY);
+    const prevScrollY = useRef(0);
+
+    const handleScroll = (e) => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > prevScrollY.current) {
+            setGoingUP(false);
+        } else if (currentScrollY < prevScrollY.current) {
+            setGoingUP(true);
+        }
+        prevScrollY.current = currentScrollY;
+        setScrollY(prevScrollY.current);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    return (
+        <BrowserRouter>
+            <div onScroll={(e) => handleScroll(e)}>
+                <Header
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                    setGoingUP={setGoingUP}
+                />
+                <Header
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                    sticky
+                    goingUp={goingUp}
+                    setGoingUP={setGoingUP}
+                    scrollY={scrollY}
+                />
+                <Switch>
+                    <Route path={"/contact"} component={ContactPage}/>
+                    <Route
+                        path="/"
+                        children={
+                            <LandingPage
+                                currentPage={currentPage}
+                                setCurrentPage={setCurrentPage}
+                                scrollY={scrollY}
+                            />
+                        }
+                        exact
+                    />
+                </Switch>
+            </div>
+        </BrowserRouter>
+    );
+};
+
+export default App;

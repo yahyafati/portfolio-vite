@@ -1,0 +1,126 @@
+// Variable Declaration - Colors
+$background-color: #221f48;
+$lighter-background-color: #2b247c;
+$primary-color: #bdff00;
+$secondary-color: rgb(160, 209, 27);
+
+$design-color: #faff00;
+$mobile-dev-color: #00ff29;
+$web-dev-color: #00ffe0;
+
+$card-background: #2b2665;
+
+// Variable Declaration - Fonts
+$font-family: "Poppins", sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+#projectSection {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+
+    @media screen and (max-width: 768px) {
+        padding: 5rem 1rem;
+    }
+
+    @media screen and (max-width: 320px) {
+        padding: 5rem 0.25rem;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: $font-weight-medium;
+        padding-bottom: 2rem;
+
+        strong {
+            color: $primary-color;
+        }
+
+        @media screen and (max-width: 320px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    .projectList {
+        overflow-x: auto;
+        padding: 1rem;
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: white;
+            outline: none;
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            background-color: white;
+        }
+
+        .project-item-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-item {
+            background-color: $card-background;
+            border-radius: 5px;
+            background-color: $card-background;
+            padding: 1.5rem 1rem;
+            width: 70%;
+            text-align: center;
+            cursor: grab;
+
+            .project-icon {
+                height: 10rem;
+                width: 15rem;
+            }
+
+            .title-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.25rem;
+
+                .title {
+                    font-weight: $font-weight-regular;
+                    font-size: 1.5rem;
+                }
+
+                .git-icon {
+                    display: flex;
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 640px) {
+                flex-grow: 1;
+            }
+
+            @media screen and (max-width: 320px) {
+                flex-grow: 1;
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+
+                .project-icon {
+                    height: 5rem;
+                    width: 10rem;
+                }
+
+                .title {
+                    font-size: 1rem;
+                    font-weight: $font-weight-light;
+                }
+            }
+        }
+    }
+}
