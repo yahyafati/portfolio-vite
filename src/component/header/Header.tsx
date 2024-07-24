@@ -2,10 +2,9 @@ import {useState, useEffect} from "react";
 import Hamburger from "../hamburger";
 import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
-import OutsideClickHandler from "react-outside-click-handler/build/OutsideClickHandler";
-
 import * as style from "./style.module.scss";
 import classNames from "classnames";
+import OutsideClickHandler from "react-outside-click-handler";
 
 const Header = ({
                     currentPage,
@@ -80,7 +79,8 @@ const Header = ({
             <h1>
                 <Link to={"/"} className={classNames(style.logoTitle, {
                     menuOpen: expanded,
-                })}>Yahya Fati
+                })}>
+                    Yahya Fati
                 </Link>
             </h1>
 

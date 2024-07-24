@@ -1,8 +1,8 @@
 import {useState, useEffect, useRef} from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import LandingPage from "./component/landingPage/LandingPage";
-import Header from "./component/header/Header";
-import ContactPage from "./component/contact/ContactPage";
+import LandingPage from "@components/landingPage/LandingPage";
+import Header from "@components/header/Header";
+import ContactPage from "@components/contact/ContactPage";
 
 import "./style/app/App.scss";
 
