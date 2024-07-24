@@ -1,5 +1,5 @@
 import React from "react";
-import hereAreServices from "../../../svg/Services.svg";
+import hereAreServices from "@svg/Services.svg";
 
 import ServiceCard from "./ServiceCard";
 

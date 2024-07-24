@@ -1,5 +1,4 @@
 import React from "react";
-// import "../../../style/contact/contact.scss";
 import SocialMediaIcons from "./SocialMediaIcons";
 
 import * as style from "./style.module.scss"

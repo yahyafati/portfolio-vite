@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import standingManSVG from "../../../svg/Home.svg";
+import standingManSVG from "@svg/Home.svg";
 import {Link} from "react-router-dom";
 
 import * as style from "./style.module.scss";

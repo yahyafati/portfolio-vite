@@ -1,9 +1,9 @@
 import React, {useRef, useEffect} from "react";
 import ProjectItem from "./ProjectItem";
-import helio from "../../../svg/HelioIMS.svg";
-import hanan from "../../../svg/Hanan.svg";
-import task from "../../../svg/Tasks.svg";
-import game2048 from "../../../svg/Game2048.svg";
+import helio from "@svg/HelioIMS.svg";
+import hanan from "@svg/Hanan.svg";
+import task from "@svg/Tasks.svg";
+import game2048 from "@svg/Game2048.svg";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import {Carousel} from "react-responsive-carousel";

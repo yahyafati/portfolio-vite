@@ -1,5 +1,5 @@
 import React from "react";
-import hiFromDev from "../../../svg/About.svg";
+import hiFromDev from "@svg/About.svg";
 import * as style from "./style.module.scss"
 
 const About = ({_ref}) => {
