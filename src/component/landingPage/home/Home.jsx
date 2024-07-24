@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
-import "../../../style/home/home.scss";
 import standingManSVG from "../../../svg/Home.svg";
 import {Link} from "react-router-dom";
 
-const MY_TITLE = ["Web Developer", "Mobile Developer", "Student"];
+import * as style from "./style.module.scss";
+import classNames from "classnames";
+
+const MY_TITLE = ["Full Stack Developer", "React Developer", "Java Developer", "Kotlin Developer"];
 const Home = ({_ref}) => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [animateTyping, setAnimateTyping] = useState(true);
@@ -24,21 +26,23 @@ const Home = ({_ref}) => {
     };
 
     return (
-        <div ref={_ref} id="homeSection">
-            <div className="intro_text">
-                <p className="hi">Hi, I'm</p>
-                <p className="name">Yahya Fati</p>
-                <p className="work" onAnimationEnd={handleAnimationEnd}>
+        <div ref={_ref} id="homeSection" className={style.homeSection}>
+            <div className={style.introText}>
+                <p className={style.hi}>Hi, I'm</p>
+                <p className={style.name}>Yahya Fati</p>
+                <p className={style.work} onAnimationEnd={handleAnimationEnd}>
                     <span
-                        className={`before ${animateTyping ? "animate" : ""}`}
+                        className={classNames(style.before, {
+                            [style.animate]: animateTyping,
+                        })}
                         style={{
                             animationTimingFunction: `steps(${MY_TITLE[currentWordIndex].length})`,
                         }}
                     >
                         <span
-                            className={`after ${
-                                animateTyping ? "animate" : ""
-                            }`}
+                            className={classNames(style.after, {
+                                [style.animate]: animateTyping,
+                            })}
                             style={{
                                 animationTimingFunction: `steps(${MY_TITLE[currentWordIndex].length})`,
                             }}
@@ -47,21 +51,21 @@ const Home = ({_ref}) => {
 
                     {MY_TITLE[currentWordIndex]}
                 </p>
-                <div className="buttons">
-                    <Link to={"/contact"} className="button primary">
+                <div className={style.buttons}>
+                    <Link to={"/contact"} className={classNames(style.button, style.primary)}>
                         Contact Me
                     </Link>
                     <a
                         href={"/Resume.pdf"}
                         target={"_blank"}
-                        className="button"
+                        className={classNames(style.button)}
                     >
                         Get Resume
                     </a>
                 </div>
             </div>
             <img
-                className="introImg"
+                className={style.introImg}
                 src={standingManSVG}
                 alt="A Man Standing and Using a phone"
             />
