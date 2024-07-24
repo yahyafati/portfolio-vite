@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import Hamburger from "../Hamburger";
+import Hamburger from "../hamburger";
 import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
 import OutsideClickHandler from "react-outside-click-handler/build/OutsideClickHandler";

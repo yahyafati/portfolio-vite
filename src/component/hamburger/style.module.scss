@@ -1,0 +1,155 @@
+// Variable Declaration - Colors
+$background-color: #221f48;
+$lighter-background-color: #2b247c;
+$primary-color: #bdff00;
+$secondary-color: rgb(160, 209, 27);
+
+$design-color: #faff00;
+$mobile-dev-color: #00ff29;
+$web-dev-color: #00ffe0;
+
+$card-background: #2b2665;
+
+// Variable Declaration - Fonts
+$font-family: "Poppins", sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+.hamburger {
+  display: flex;
+  cursor: pointer;
+  color: $primary-color;
+
+  justify-content: flex-end;
+
+  .hamContainer {
+    display: flex;
+    cursor: pointer;
+    color: $primary-color;
+    width: 2rem;
+    height: 2rem;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    // transition: all 1s;
+
+    .line {
+      height: 3px;
+      background-color: white;
+    }
+
+    &.open {
+      .line1 {
+        // animation: name duration timing-function delay iteration-count direction fill-mode;
+        animation: turn_back 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      .line2 {
+        animation: come_back 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      .line3 {
+        animation: turn_back_up 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    &.close {
+      .line {
+        &.line1 {
+          animation: turn 0.5s ease-in-out;
+          animation-fill-mode: forwards;
+        }
+
+        &.line2 {
+          animation: goaway 0.5s ease-in-out 0.4s;
+          animation-fill-mode: forwards;
+        }
+
+        &.line3 {
+          animation: turnDown 0.5s ease-in-out;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes turn {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translate(0%, 10px) rotateZ(45deg) scale(1);
+  }
+}
+
+@keyframes turn_back {
+  0% {
+    transform: translate(0%, 10px) rotateZ(45deg) scale(1);
+  }
+
+  100% {
+    transform: translateX(0%);
+    // transform: translate(0%, 10px) rotateZ(45deg) scale(1);
+  }
+}
+
+@keyframes goaway {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes come_back {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes turnDown {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translate(0%, -10px) rotateZ(-45deg) scale(1);
+  }
+}
+
+@keyframes turn_back_up {
+  0% {
+    transform: translate(0%, -10px) rotateZ(-45deg) scale(1);
+  }
+
+  100% {
+    transform: translateX(0%) rotateZ(0deg) scale(1);
+  }
+}
