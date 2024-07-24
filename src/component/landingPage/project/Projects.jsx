@@ -1,5 +1,4 @@
 import React, {useRef, useEffect} from "react";
-import "../../../style/projects/project.scss";
 import ProjectItem from "./ProjectItem";
 import helio from "../../../svg/HelioIMS.svg";
 import hanan from "../../../svg/Hanan.svg";
@@ -9,15 +8,17 @@ import game2048 from "../../../svg/Game2048.svg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import {Carousel} from "react-responsive-carousel";
 
+import * as style from "./style.module.scss"
+
 const Projects = ({_ref}) => {
     return (
-        <div ref={_ref} id="projectSection">
+        <div ref={_ref} id="projectSection" className={style.projectSection}>
             <h2>
                 So you wanna see my previous <strong>Projects</strong>
             </h2>
             {/* <div className="projectList"> */}
             <Carousel
-                className="projectList"
+                className={style.projectList}
                 autoPlay={true}
                 infiniteLoop={true}
                 showStatus={false}
