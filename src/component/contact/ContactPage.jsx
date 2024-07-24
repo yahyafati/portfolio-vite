@@ -13,7 +13,7 @@ const ContactPage = () => {
                 src={ContactSVG}
                 alt={"Contact Us Image"}
             />
-            <ContactForm style={style}/>
+            <ContactForm/>
         </div>
     );
 };

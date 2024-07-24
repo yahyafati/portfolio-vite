@@ -1,7 +1,7 @@
 import React from 'react';
-// import * as style from "./style.module.scss";
+import * as style from "./style.module.scss";
 
-const ContactForm = ({style}) => {
+const ContactForm = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
