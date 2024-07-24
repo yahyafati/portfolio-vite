@@ -6,6 +6,7 @@ import * as style from "./style.module.scss";
 import classNames from "classnames";
 import OutsideClickHandler from "react-outside-click-handler";
 
+const DISABLE_TESTIMONIAL = import.meta.env.VITE_REACT_APP_DISABLE_TESTIMONIALS === "true";
 const Header = ({
                     currentPage,
                     setCurrentPage,
@@ -136,7 +137,7 @@ const Header = ({
                                     Works
                                 </HashLink>
                             </li>
-                            <li
+                            {!DISABLE_TESTIMONIAL && <li
                                 className={classNames({
                                     [style.active]: currentPage === "testimonials",
                                 })}
@@ -147,9 +148,9 @@ const Header = ({
                                 >
                                     Testimonials
                                 </HashLink>
-                            </li>
+                            </li>}
 
-                            <li className={style.hireMe} onClick={linkClicked}>
+                            <li className={style.hireMe} onClick={() => linkClicked(null, "contact")}>
                                 <Link
                                     onClick={(e) => linkClicked(e, "contact")}
                                     to={"/contact"}

@@ -7,14 +7,15 @@ import ShallWe from "./shallWe/ShallWe";
 import Contact from "./contact/Contact";
 import Testimonial from "./testimonial/Testimonial.jsx";
 
+const DISABLE_TESTIMONIAL = import.meta.env.VITE_REACT_APP_DISABLE_TESTIMONIALS === "true";
 const LandingPage = ({setCurrentPage, scrollY}) => {
     // const [scrollY, setScrollY] = useState(window.scrollY);
-    const homeRef = useRef(undefined);
-    const aboutRef = useRef(undefined);
-    const servicesRef = useRef(undefined);
-    const projectsRef = useRef(undefined);
-    const testimonialRef = useRef(undefined);
-    const contactRef = useRef(undefined);
+    const homeRef = useRef<HTMLElement>();
+    const aboutRef = useRef<HTMLElement>();
+    const servicesRef = useRef<HTMLElement>();
+    const projectsRef = useRef<HTMLElement>();
+    const testimonialRef = useRef<HTMLElement>();
+    const contactRef = useRef<HTMLElement>();
 
     useEffect(() => {
         // if (homeRef.current.getBoundingClientRect().top > 0) {
@@ -22,13 +23,13 @@ const LandingPage = ({setCurrentPage, scrollY}) => {
         // } else
 
         /* Home is until the end of about */
-        if (aboutRef.current.getBoundingClientRect().top > 0) {
+        if (aboutRef.current?.getBoundingClientRect().top > 0) {
             setCurrentPage("home");
-        } else if (servicesRef.current.getBoundingClientRect().top > 0) {
+        } else if (servicesRef.current?.getBoundingClientRect().top > 0) {
             setCurrentPage("services");
-        } else if (projectsRef.current.getBoundingClientRect().top > 0) {
+        } else if (projectsRef.current?.getBoundingClientRect().top > 0) {
             setCurrentPage("projects");
-        } else if (testimonialRef.current.getBoundingClientRect().top > 0) {
+        } else if (testimonialRef.current?.getBoundingClientRect().top > 0) {
             setCurrentPage("testimonials");
         } else {
             setCurrentPage("reach-me");
@@ -41,7 +42,7 @@ const LandingPage = ({setCurrentPage, scrollY}) => {
             <About _ref={aboutRef}/>
             <Services _ref={servicesRef}/>
             <Projects _ref={projectsRef}/>
-            <Testimonial _ref={testimonialRef}/>
+            {!DISABLE_TESTIMONIAL && <Testimonial _ref={testimonialRef}/>}
             <ShallWe/>
             <Contact _ref={contactRef}/>
         </div>
