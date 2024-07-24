@@ -1,6 +1,7 @@
 import React from 'react';
+// import * as style from "./style.module.scss";
 
-const ContactForm = () => {
+const ContactForm = ({style}) => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -8,9 +9,9 @@ const ContactForm = () => {
 
 
     return (
-        <div className={"contact-form-container"}>
-            <h2 className={"form-welcome"}><strong>Hi</strong>, there</h2>
-            <form className={"contact-form"} method={"post"} action={"#"} onSubmit={handleFormSubmit}>
+        <div className={style.contactFormContainer}>
+            <h2 className={style.formWelcome}><strong>Hi</strong>, there</h2>
+            <form className={style.contactForm} method={"post"} action={"#"} onSubmit={handleFormSubmit}>
                 <input
                     type={"text"}
                     placeholder={"Full Name"}
@@ -35,7 +36,7 @@ const ContactForm = () => {
                     placeholder={"How can I be of service?"}
                     name={"body"}
                 />
-                <button className={"submit-button"} type={"submit"}>Send</button>
+                <button className={style.submitButton} type={"submit"}>Send</button>
             </form>
         </div>
     );

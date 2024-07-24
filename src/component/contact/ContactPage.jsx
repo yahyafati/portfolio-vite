@@ -1,17 +1,19 @@
 import React from "react";
 import ContactForm from "./ContactForm";
 import ContactSVG from "@svg/Contact.svg";
-import "@styles/contactPage/contactPage.scss";
+
+import * as style from "./style.module.scss";
+
 
 const ContactPage = () => {
     return (
-        <div id={"contactPage"}>
+        <div className={style.contactPage}>
             <img
-                className={"contactImg"}
+                className={style.contactImg}
                 src={ContactSVG}
                 alt={"Contact Us Image"}
             />
-            <ContactForm/>
+            <ContactForm style={style}/>
         </div>
     );
 };
