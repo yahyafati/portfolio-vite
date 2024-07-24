@@ -1,9 +1,16 @@
 import React from "react";
 
-import * as style from "./style.module.scss"
+import style from "./style.module.scss"
 import classNames from "classnames";
 
-const Hamburger = ({className, onClick, menuVisible, expanded}) => {
+interface HamburgerProps {
+    className?: string;
+    onClick: () => void;
+    menuVisible?: boolean;
+    expanded?: boolean;
+}
+
+const Hamburger: React.FC<HamburgerProps> = ({className, onClick, menuVisible, expanded}) => {
     return (
         <div
             className={classNames(style.hamburger, className, {

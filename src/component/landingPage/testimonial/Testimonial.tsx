@@ -4,9 +4,15 @@ import TestimonialItem from "./TestimonialItem";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import {Carousel} from "react-responsive-carousel";
 
-import * as style from "./style.module.scss"
+import style from "./style.module.scss"
 
-const SAMPLE_TESTIMONIALS = [
+export interface ITestimonial {
+    body: string;
+    by: string;
+    relation: string;
+}
+
+const SAMPLE_TESTIMONIALS: ITestimonial[] = [
     {
         body: "He can go and beat anyone in the street and you can't do anything about it. He is too powerful!",
         by: "Fati",
@@ -49,10 +55,12 @@ const SAMPLE_TESTIMONIALS = [
     }
 ];
 
+interface TestimonialProps {
+}
 
-const Testimonial = ({_ref}) => {
+const Testimonial: React.FC<TestimonialProps> = () => {
     return (
-        <div ref={_ref} id="testimonialSection" className={style.testimonialSection}>
+        <div id="testimonialSection" className={style.testimonialSection}>
             <h2>
                 <strong>Kinds words</strong> I've received over the years
             </h2>
@@ -69,9 +77,7 @@ const Testimonial = ({_ref}) => {
                 {SAMPLE_TESTIMONIALS.map((testimonial, index) => (
                     <div key={index} className={style.testimonialContainer}>
                         <TestimonialItem
-                            body={testimonial.body}
-                            by={testimonial.by}
-                            relation={testimonial.relation}
+                            testimonial={testimonial}
                         />
                     </div>
                 ))}

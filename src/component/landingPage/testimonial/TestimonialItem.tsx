@@ -1,9 +1,15 @@
 import React from "react";
 import profileSVG from "../../../svg/Profile.svg";
 
-import * as style from "./style.module.scss"
+import style from "./style.module.scss"
+import {ITestimonial} from "./Testimonial.tsx";
 
-const TestimonialItem = ({body, by, relation}) => {
+interface TestimonialItemProps {
+    testimonial: ITestimonial;
+}
+
+const TestimonialItem: React.FC<TestimonialItemProps> = ({testimonial}) => {
+    const {body, by, relation} = testimonial;
     return (
         <div className={style.testimonialItem}>
             <img

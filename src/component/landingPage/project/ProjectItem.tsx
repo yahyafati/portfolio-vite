@@ -1,9 +1,17 @@
 import React from "react";
 import {AiFillGithub, AiFillChrome} from "react-icons/ai";
 
-import * as style from "./style.module.scss"
+import style from "./style.module.scss"
 
-const ProjectItem = ({icon, title, href, link}) => {
+interface ProjectItemProps {
+    icon: string;
+    title: string;
+    href: string;
+    link?: string;
+
+}
+
+const ProjectItem: React.FC<ProjectItemProps> = ({icon, title, href, link}) => {
     return (
         <div className={style.projectItemContainer}>
             <div className={style.projectItem}>

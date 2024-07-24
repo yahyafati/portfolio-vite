@@ -1,10 +1,9 @@
-import React from "react";
 import hiFromDev from "@svg/About.svg";
-import * as style from "./style.module.scss"
+import style from "./style.module.scss"
 
-const About = ({_ref}) => {
+const About = () => {
     return (
-        <div ref={_ref} id="aboutSection" className={style.aboutSection}>
+        <div id="aboutSection" className={style.aboutSection}>
             <div className={style.imgContainer}>
                 <img
                     className={style.aboutImg}

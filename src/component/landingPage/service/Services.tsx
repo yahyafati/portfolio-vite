@@ -1,13 +1,12 @@
-import React from "react";
 import hereAreServices from "@svg/Services.svg";
 
 import ServiceCard from "./ServiceCard";
 
-import * as style from "./style.module.scss"
+import style from "./style.module.scss"
 
-const Services = ({_ref}) => {
+const Services = () => {
     return (
-        <div ref={_ref} id="servicesSection" className={style.servicesSection}>
+        <div id="servicesSection" className={style.servicesSection}>
             <h2>
                 Here are the <strong>Services</strong> that I offer
             </h2>

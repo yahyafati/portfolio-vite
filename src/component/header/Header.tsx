@@ -1,22 +1,27 @@
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import Hamburger from "../hamburger";
 import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
-import * as style from "./style.module.scss";
+import style from "./style.module.scss";
 import classNames from "classnames";
 import OutsideClickHandler from "react-outside-click-handler";
+import {useScrollDirection, useScrollY} from "../../hooks";
 
 const DISABLE_TESTIMONIAL = import.meta.env.VITE_REACT_APP_DISABLE_TESTIMONIALS === "true";
-const Header = ({
-                    currentPage,
-                    setCurrentPage,
-                    goingUp,
-                    setGoingUP,
-                    scrollY,
-                    sticky = false,
-                }) => {
+
+interface HeaderProps {
+    currentPage: string;
+    setCurrentPage: (value: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({
+                                           currentPage,
+                                           setCurrentPage,
+                                       }) => {
     const [expanded, setExpanded] = useState(false); // Is Menu Expanded?
     const [hidden, setHidden] = useState(true);
+    const scrollY = useScrollY();
+    const scrollDirection = useScrollDirection();
 
     useEffect(() => {
         setExpanded(false);
@@ -26,19 +31,16 @@ const Header = ({
         if (expanded) setHidden(false);
     }, [expanded]);
 
-    // console.log("Sticky: ", sticky);
     const toggleShow = () => {
         setExpanded((current) => !current);
     };
 
-    const linkClicked = (e, value) => {
-        // e.preventDefault();
+    const linkClicked = (_: React.MouseEvent<HTMLElement, MouseEvent>, value: string) => {
         setExpanded(false);
-        setGoingUP(false);
         setCurrentPage(value);
     };
 
-    const handleAnimationEnd = (e) => {
+    const handleAnimationEnd: React.AnimationEventHandler = (e) => {
         if (
             e.animationName === "collapse_animation" || e.animationName === "expand_animation"
         ) {
@@ -46,36 +48,13 @@ const Header = ({
         }
     };
 
-    const getClassName = () => {
-        const minScroll = 120;
-        if (!sticky) {
-            // return scrollY > 0 ? " no-display " : " ";
-            // return scrollY > minScroll ? "no-display" : "no-display hide";
-            return "";
-        }
-        if (scrollY <= minScroll) {
-            return style.stick;
-        }
-        let result = style.stick;
-        if (goingUp && scrollY > minScroll) {
-            // if (scrollY > minScroll) {
-            result += ` ${style.show} `;
-            // } else {
-            // result += " hide ";
-            // }
-        } else {
-            result += ` ${style.hide} `;
-        }
-        // result +=
-        //     goingUp && scrollY > 0
-        //         ? // scrollY > originalRef.current.getBoundingClientRect().height
-        //           " show "
-        //         : " hide ";
-        return result;
-    };
 
     return (
-        <header className={getClassName()}>
+        <header className={classNames({
+            [style.stick]: scrollY > 120,
+            [style.show]: scrollDirection === "up" && scrollY > 120,
+            [style.hide]: scrollDirection === "down" && scrollY > 120,
+        })}>
 
             <h1>
                 <Link to={"/"} className={classNames(style.logoTitle, {
@@ -150,7 +129,7 @@ const Header = ({
                                 </HashLink>
                             </li>}
 
-                            <li className={style.hireMe} onClick={() => linkClicked(null, "contact")}>
+                            <li className={style.hireMe} onClick={(e) => linkClicked(e, "contact")}>
                                 <Link
                                     onClick={(e) => linkClicked(e, "contact")}
                                     to={"/contact"}

@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import standingManSVG from "@svg/Home.svg";
 import {Link} from "react-router-dom";
 
-import * as style from "./style.module.scss";
+import style from "./style.module.scss";
 import classNames from "classnames";
 
 const MY_TITLE = ["Full Stack Developer", "React Developer", "Java Developer", "Kotlin Developer"];
-const Home = ({_ref}) => {
+const Home = () => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [currentLetterIndex, setCurrentLetterIndex] = useState(1);
 
@@ -28,7 +28,7 @@ const Home = ({_ref}) => {
 
 
     return (
-        <div ref={_ref} id="homeSection" className={style.homeSection}>
+        <div id="homeSection" className={style.homeSection}>
             <div className={style.introText}>
                 <p className={style.hi}>Hi, I'm</p>
                 <p className={style.name}>Yahya Fati</p>

@@ -1,8 +1,7 @@
-import React from "react";
 import ContactForm from "./ContactForm";
 import ContactSVG from "@svg/Contact.svg";
 
-import * as style from "./style.module.scss";
+import style from "./style.module.scss";
 
 
 const ContactPage = () => {

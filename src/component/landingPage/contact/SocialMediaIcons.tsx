@@ -1,4 +1,3 @@
-import React from "react";
 import {
     FaFacebookF,
     FaGithub,
@@ -8,7 +7,7 @@ import {
 import {MdEmail} from "react-icons/md";
 import {AiFillInstagram} from "react-icons/ai";
 
-import * as style from "./style.module.scss"
+import style from "./style.module.scss"
 
 const SocialMediaIcons = () => {
     return (

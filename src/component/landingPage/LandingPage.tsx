@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from "react";
+import React from "react";
 import Home from "./home/Home";
 import About from "./about/About";
 import Services from "./service/Services";
@@ -8,43 +8,21 @@ import Contact from "./contact/Contact";
 import Testimonial from "./testimonial/Testimonial.jsx";
 
 const DISABLE_TESTIMONIAL = import.meta.env.VITE_REACT_APP_DISABLE_TESTIMONIALS === "true";
-const LandingPage = ({setCurrentPage, scrollY}) => {
-    // const [scrollY, setScrollY] = useState(window.scrollY);
-    const homeRef = useRef<HTMLElement>();
-    const aboutRef = useRef<HTMLElement>();
-    const servicesRef = useRef<HTMLElement>();
-    const projectsRef = useRef<HTMLElement>();
-    const testimonialRef = useRef<HTMLElement>();
-    const contactRef = useRef<HTMLElement>();
 
-    useEffect(() => {
-        // if (homeRef.current.getBoundingClientRect().top > 0) {
-        //     setCurrentPage("home");
-        // } else
+interface LandingPageProps {
+}
 
-        /* Home is until the end of about */
-        if (aboutRef.current?.getBoundingClientRect().top > 0) {
-            setCurrentPage("home");
-        } else if (servicesRef.current?.getBoundingClientRect().top > 0) {
-            setCurrentPage("services");
-        } else if (projectsRef.current?.getBoundingClientRect().top > 0) {
-            setCurrentPage("projects");
-        } else if (testimonialRef.current?.getBoundingClientRect().top > 0) {
-            setCurrentPage("testimonials");
-        } else {
-            setCurrentPage("reach-me");
-        }
-    }, [scrollY]);
+const LandingPage: React.FC<LandingPageProps> = () => {
 
     return (
         <div id="AppContainer">
-            <Home _ref={homeRef}/>
-            <About _ref={aboutRef}/>
-            <Services _ref={servicesRef}/>
-            <Projects _ref={projectsRef}/>
-            {!DISABLE_TESTIMONIAL && <Testimonial _ref={testimonialRef}/>}
+            <Home/>
+            <About/>
+            <Services/>
+            <Projects/>
+            {!DISABLE_TESTIMONIAL && <Testimonial/>}
             <ShallWe/>
-            <Contact _ref={contactRef}/>
+            <Contact/>
         </div>
     );
 };
