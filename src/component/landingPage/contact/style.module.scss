@@ -1,0 +1,77 @@
+// Variable Declaration - Colors
+$background-color: #221f48;
+$lighter-background-color: #2b247c;
+$primary-color: #bdff00;
+$secondary-color: rgb(160, 209, 27);
+
+$design-color: #faff00;
+$mobile-dev-color: #00ff29;
+$web-dev-color: #00ffe0;
+
+$card-background: #2b2665;
+
+// Variable Declaration - Fonts
+$font-family: "Poppins", sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  min-height: 15rem;
+
+  color: $background-color;
+  background-color: white;
+  border-radius: 500px 500px 0 0;
+
+  .name {
+    font-weight: $font-weight-light;
+  }
+
+  .icons {
+    display: flex;
+    gap: 1rem;
+
+    .icon {
+      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      transition: none;
+
+      &:active {
+        color: $lighter-background-color;
+      }
+    }
+  }
+
+  .credit {
+    font-weight: $font-weight-light;
+    font-size: 0.8rem;
+  }
+
+  @media screen and (max-width: 320px) {
+    .name {
+      font-size: 1rem;
+    }
+
+    .icons {
+      gap: 0.5rem;
+
+      .icon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    .credit {
+      font-size: 0.75rem;
+    }
+  }
+}

@@ -1,13 +1,15 @@
 import React from "react";
-import "../../../style/contact/contact.scss";
+// import "../../../style/contact/contact.scss";
 import SocialMediaIcons from "./SocialMediaIcons";
+
+import * as style from "./style.module.scss"
 
 const Contact = ({_ref}) => {
     return (
-        <footer ref={_ref} id="contactSection">
-            <h2 className="name">Yahya Fati Haji</h2>
+        <footer ref={_ref} id="contactSection" className={style.contactSection}>
+            <h2 className={style.name}>Yahya Fati Haji</h2>
             <SocialMediaIcons/>
-            <h6 className="credit">Designed and Developed By Me</h6>
+            <h6 className={style.credit}>Designed and Developed By Me</h6>
         </footer>
     );
 };
