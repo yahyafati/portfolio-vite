@@ -1,9 +1,11 @@
-import React, {useState, useEffect, useRef} from "react";
-import "../../style/header/header.scss";
+import {useState, useEffect} from "react";
 import Hamburger from "../Hamburger";
 import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
 import OutsideClickHandler from "react-outside-click-handler/build/OutsideClickHandler";
+
+import * as style from "./style.module.scss";
+import classNames from "classnames";
 
 const Header = ({
                     currentPage,
@@ -38,8 +40,7 @@ const Header = ({
 
     const handleAnimationEnd = (e) => {
         if (
-            e.animationName === "collapse_animation" ||
-            e.animationName === "expand_animation"
+            e.animationName === "collapse_animation" || e.animationName === "expand_animation"
         ) {
             setHidden(!expanded);
         }
@@ -53,17 +54,17 @@ const Header = ({
             return "";
         }
         if (scrollY <= minScroll) {
-            return "stick";
+            return style.stick;
         }
-        let result = "stick";
+        let result = style.stick;
         if (goingUp && scrollY > minScroll) {
             // if (scrollY > minScroll) {
-            result += " show ";
+            result += ` ${style.show} `;
             // } else {
             // result += " hide ";
             // }
         } else {
-            result += " hide ";
+            result += ` ${style.hide} `;
         }
         // result +=
         //     goingUp && scrollY > 0
@@ -75,28 +76,34 @@ const Header = ({
 
     return (
         <header className={getClassName()}>
-            <Link to={"/"} className={`logo-title ${expanded && "menuOpen"}`}>
-                <h1>Yahya Fati</h1>
-            </Link>
+
+            <h1>
+                <Link to={"/"} className={classNames(style.logoTitle, {
+                    menuOpen: expanded,
+                })}>Yahya Fati
+                </Link>
+            </h1>
+
             <OutsideClickHandler onOutsideClick={() => setExpanded(false)}>
                 <Hamburger
-                    className={`option-button`}
+                    className={style.optionButton}
                     onClick={toggleShow}
                     menuVisible={!hidden}
                     expanded={expanded}
                 />
                 <div
-                    className={`${
-                        (expanded ? "expanded" : "collapsed") +
-                        (hidden ? " hidden" : "")
-                    } navbar-link-container`}
+                    className={classNames(style.navbarLinkContainer, {
+                        [style.expanded]: expanded,
+                        [style.collapsed]: !expanded,
+                        [style.hidden]: hidden,
+                    })}
                 >
-                    <div className="menu" onAnimationEnd={handleAnimationEnd}>
+                    <div className={style.menu} onAnimationEnd={handleAnimationEnd}>
                         <ul>
                             <li
-                                className={
-                                    currentPage === "home" ? "active" : ""
-                                }
+                                className={classNames({
+                                    [style.active]: currentPage === "home",
+                                })}
                             >
                                 <HashLink
                                     onClick={(e) => linkClicked(e, "home")}
@@ -106,9 +113,9 @@ const Header = ({
                                 </HashLink>
                             </li>
                             <li
-                                className={
-                                    currentPage === "services" ? "active" : ""
-                                }
+                                className={classNames({
+                                    [style.active]: currentPage === "services",
+                                })}
                             >
                                 <HashLink
                                     onClick={(e) => linkClicked(e, "services")}
@@ -118,9 +125,9 @@ const Header = ({
                                 </HashLink>
                             </li>
                             <li
-                                className={
-                                    currentPage === "projects" ? "active" : ""
-                                }
+                                className={classNames({
+                                    [style.active]: currentPage === "projects",
+                                })}
                             >
                                 <HashLink
                                     onClick={(e) => linkClicked(e, "projects")}
@@ -129,12 +136,10 @@ const Header = ({
                                     Works
                                 </HashLink>
                             </li>
-                            {/* <li
-                                className={
-                                    currentPage === "testimonials"
-                                        ? "active"
-                                        : ""
-                                }
+                            <li
+                                className={classNames({
+                                    [style.active]: currentPage === "testimonials",
+                                })}
                             >
                                 <HashLink
                                     onClick={(e) => linkClicked(e, "projects")}
@@ -142,9 +147,9 @@ const Header = ({
                                 >
                                     Testimonials
                                 </HashLink>
-                            </li> */}
+                            </li>
 
-                            <li className="hire-me" onClick={linkClicked}>
+                            <li className={style.hireMe} onClick={linkClicked}>
                                 <Link
                                     onClick={(e) => linkClicked(e, "contact")}
                                     to={"/contact"}
