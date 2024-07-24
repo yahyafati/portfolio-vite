@@ -1,24 +1,25 @@
 import React from "react";
 import hereAreServices from "../../../svg/Services.svg";
 
-import "../../../style/service/service.scss";
 import ServiceCard from "./ServiceCard";
+
+import * as style from "./style.module.scss"
 
 const Services = ({_ref}) => {
     return (
-        <div ref={_ref} id="servicesSection">
+        <div ref={_ref} id="servicesSection" className={style.servicesSection}>
             <h2>
                 Here are the <strong>Services</strong> that I offer
             </h2>
-            <div className="services">
-                <div className="card-container">
-                    <div className="col-1-container">
+            <div className={style.services}>
+                <div className={style.cardContainer}>
+                    <div className={style.col1Container}>
                         <ServiceCard
                             type="design"
                             body="Design sweet UI with amazing detail to user
                             experience"
                             title="Design"
-                            className="not-big-screen"
+                            className={style.notBigScreen}
                         />
                         <ServiceCard
                             type="mobile"
@@ -38,13 +39,13 @@ const Services = ({_ref}) => {
                         body="Design sweet UI with amazing detail to user
                             experience"
                         title="Design"
-                        className="big-screen"
+                        className={style.bigScreen}
                     />
                 </div>
 
-                <div className="imgContainer">
+                <div className={style.imgContainer}>
                     <img
-                        className="servicesImg"
+                        className={style.servicesImg}
                         src={hereAreServices}
                         alt="Illustration of women pointing at the services"
                     />

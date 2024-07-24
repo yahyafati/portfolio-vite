@@ -18,7 +18,7 @@ $font-weight-medium: 500;
 $font-weight-semi-bold: 600;
 $font-weight-bold: 700;
 
-#servicesSection {
+.servicesSection {
   display: flex;
   flex-direction: column;
   padding: 3rem;
@@ -50,7 +50,7 @@ $font-weight-bold: 700;
       flex-direction: column;
     }
 
-    .card-container {
+    .cardContainer {
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -67,7 +67,7 @@ $font-weight-bold: 700;
         gap: 2rem;
       }
 
-      .col-1-container {
+      .col1Container {
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -79,11 +79,11 @@ $font-weight-bold: 700;
         background-color: $card-background;
         padding: 2rem 1rem;
 
-        &.not-big-screen {
+        &.notBigScreen {
           display: none;
         }
 
-        .card-icon {
+        .cardIcon {
           width: 5rem;
           height: 5rem;
 
@@ -110,11 +110,11 @@ $font-weight-bold: 700;
         }
 
         @media screen and (max-width: 768px) {
-          &.big-screen {
+          &.bigScreen {
             display: none;
           }
 
-          &.not-big-screen {
+          &.notBigScreen {
             display: block;
           }
         }
