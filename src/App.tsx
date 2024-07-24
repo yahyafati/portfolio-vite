@@ -1,9 +1,10 @@
 import {useState, useEffect, useRef} from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import "./style/app/App.scss";
 import LandingPage from "./component/landingPage/LandingPage";
 import Header from "./component/header/Header";
 import ContactPage from "./component/contact/ContactPage";
+
+import "./style/app/App.scss";
 
 const App = () => {
     const [currentPage, setCurrentPage] = useState("home");

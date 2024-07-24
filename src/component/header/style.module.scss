@@ -1,24 +1,4 @@
-$background-color: #221f48;
-$primary-color: #bdff00;
-$secondary-color: rgb(160, 209, 27);
-
-$font-family-logo: "Rochester", cursive;
-
-$inactive-navbar-link-color: #cccccc;
-$active-navbar-link-color: $primary-color;
-
-// Variable Declaration - Fonts
-$font-family: "Poppins", sans-serif;
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-semi-bold: 600;
-$font-weight-bold: 700;
-
-// zIndices
-
-$navBarUlZIndex: 200;
-$introTextZIndex: 100;
+@import "@styles/variables.scss";
 
 header {
   display: flex;
