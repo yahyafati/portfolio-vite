@@ -8,48 +8,32 @@ import classNames from "classnames";
 const MY_TITLE = ["Full Stack Developer", "React Developer", "Java Developer", "Kotlin Developer"];
 const Home = ({_ref}) => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
-    const [animateTyping, setAnimateTyping] = useState(true);
+    const [currentLetterIndex, setCurrentLetterIndex] = useState(1);
+
 
     useEffect(() => {
-        setAnimateTyping(true);
-    }, [currentWordIndex]);
+        const interval = setTimeout(() => {
+            const length = MY_TITLE[currentWordIndex].length;
+            const buffer = 30;
+            if (currentLetterIndex < length + buffer) {
+                setCurrentLetterIndex((current) => current + 1);
+            } else {
+                setCurrentLetterIndex(1);
+                setCurrentWordIndex((current) => (current + 1) % MY_TITLE.length);
+            }
+        }, 125);
 
-    const handleAnimationEnd = (e) => {
-        if (e.animationName === "slide") {
-            setAnimateTyping(false);
-            setTimeout(() => {
-                setCurrentWordIndex(
-                    (current) => (current + 1) % MY_TITLE.length
-                );
-            }, 3000);
-        }
-    };
+        return () => clearTimeout(interval);
+    }, [currentLetterIndex]);
+
 
     return (
         <div ref={_ref} id="homeSection" className={style.homeSection}>
             <div className={style.introText}>
                 <p className={style.hi}>Hi, I'm</p>
                 <p className={style.name}>Yahya Fati</p>
-                <p className={style.work} onAnimationEnd={handleAnimationEnd}>
-                    <span
-                        className={classNames(style.before, {
-                            [style.animate]: animateTyping,
-                        })}
-                        style={{
-                            animationTimingFunction: `steps(${MY_TITLE[currentWordIndex].length})`,
-                        }}
-                    >
-                        <span
-                            className={classNames(style.after, {
-                                [style.animate]: animateTyping,
-                            })}
-                            style={{
-                                animationTimingFunction: `steps(${MY_TITLE[currentWordIndex].length})`,
-                            }}
-                        ></span>
-                    </span>
-
-                    {MY_TITLE[currentWordIndex]}
+                <p className={style.work}>
+                    {MY_TITLE[currentWordIndex].slice(0, currentLetterIndex)}
                 </p>
                 <div className={style.buttons}>
                     <Link to={"/contact"} className={classNames(style.button, style.primary)}>

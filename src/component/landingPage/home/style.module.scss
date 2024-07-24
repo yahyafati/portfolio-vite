@@ -77,28 +77,8 @@ $introTextZIndex: 100;
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
       width: fit-content;
-
-      .before {
-        position: absolute;
-        background: linear-gradient(180deg, #292372 0%, #2a2375 100%);
-        right: 0;
-        top: 0%;
-        height: 100%;
-
-        &.animate {
-          left: 0;
-          animation: slide 2s ease 1s;
-        }
-
-        .after {
-          position: absolute;
-          left: 0;
-          top: 10%;
-          height: 80%;
-          border-left: 5px solid $primary-color;
-          animation: blink 500ms ease 1s infinite;
-        }
-      }
+      border-right: 5px solid $primary-color;
+      animation: blink .75s ease infinite;
     }
 
     .buttons {
@@ -183,9 +163,11 @@ $introTextZIndex: 100;
   }
 }
 
-// Don't change animation name, need to change it in Home.js as well
-@keyframes slide {
+@keyframes blink {
+  from {
+    border-right-color: $primary-color;
+  }
   to {
-    left: 100%;
+    border-right-color: transparent;
   }
 }
