@@ -1,16 +1,20 @@
 @import "@styles/variables.scss";
 
-header {
+.headerWrapper {
+  height: 7.2rem;
+}
+
+.headerInner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem;
+  padding: 2rem 3rem;
   transition: padding 0.5s;
 
   &.stick {
     width: calc(100% - 4rem);
     padding: 2rem;
-    background-color: #221f48;
+    background-color: $background-color;
     position: fixed;
     top: 0;
     height: auto;
@@ -87,7 +91,7 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-  header {
+  .headerInner {
     position: relative;
     padding: 2rem;
 
@@ -112,7 +116,7 @@ header {
 }
 
 @media screen and (max-width: 320px) {
-  header {
+  .headerInner {
     padding: 1rem;
 
     &.stick {
@@ -134,7 +138,7 @@ header {
 }
 
 @media screen and (min-width: 641px) {
-  header {
+  .headerInner {
     .optionButton {
       display: none;
     }
@@ -142,7 +146,7 @@ header {
 }
 
 @media screen and (max-width: 641px) {
-  header {
+  .headerInner {
     // position: relative;
     .optionButton {
       display: flex;
