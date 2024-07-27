@@ -1,5 +1,5 @@
-import hiFromDev from "@svg/About.svg";
-import style from "./style.module.scss"
+import hiFromDev from '@svg/About.svg';
+import style from './style.module.scss';
 
 const About = () => {
     return (
@@ -13,11 +13,12 @@ const About = () => {
             </div>
             <div className={style.aboutText}>
                 <h2>
-                    What can I say! I just <span className={style.love}>love</span> to
+                    What can I say! I just{' '}
+                    <span className={style.love}>love</span> to
                     <span className={style.code}> code</span>.
                 </h2>
                 <p className={style.about}>
-                    Hi, I’m Yahya. I’m the{" "}
+                    Hi, I’m Yahya. I’m the{' '}
                     <strong>Passionate Programmer</strong>. I love builiding
                     stuff (Software stuff obviously). I’m a Fullstack Web
                     Developer and Android Developer with experience in various

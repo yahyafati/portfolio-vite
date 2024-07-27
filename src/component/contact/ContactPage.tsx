@@ -1,8 +1,7 @@
-import ContactForm from "./ContactForm";
-import ContactSVG from "@svg/Contact.svg";
+import ContactForm from './ContactForm';
+import ContactSVG from '@svg/Contact.svg';
 
-import style from "./style.module.scss";
-
+import style from './style.module.scss';
 
 const ContactPage = () => {
     return (
@@ -10,9 +9,9 @@ const ContactPage = () => {
             <img
                 className={style.contactImg}
                 src={ContactSVG}
-                alt={"Contact Us Image"}
+                alt={'Contact Us Image'}
             />
-            <ContactForm/>
+            <ContactForm />
         </div>
     );
 };

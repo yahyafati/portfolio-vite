@@ -1,8 +1,8 @@
-import hereAreServices from "@svg/Services.svg";
+import hereAreServices from '@svg/Services.svg';
 
-import ServiceCard from "./ServiceCard";
+import ServiceCard from './ServiceCard';
 
-import style from "./style.module.scss"
+import style from './style.module.scss';
 
 const Services = () => {
     return (

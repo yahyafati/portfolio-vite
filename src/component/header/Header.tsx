@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from "react";
-import Hamburger from "../hamburger";
-import {Link} from "react-router-dom";
-import {HashLink} from "react-router-hash-link";
-import style from "./style.module.scss";
-import classNames from "classnames";
-import OutsideClickHandler from "react-outside-click-handler";
-import {useScrollDirection, useScrollY} from "../../hooks";
+import React, { useEffect, useState } from 'react';
+import Hamburger from '../hamburger';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import style from './style.module.scss';
+import classNames from 'classnames';
+import OutsideClickHandler from 'react-outside-click-handler';
+import { useScrollDirection, useScrollY } from '../../hooks';
 
-const DISABLE_TESTIMONIAL = import.meta.env.VITE_REACT_APP_DISABLE_TESTIMONIALS === "true";
+const DISABLE_TESTIMONIAL =
+    import.meta.env.VITE_REACT_APP_DISABLE_TESTIMONIALS === 'true';
 
 interface HeaderProps {
     currentPage: string;
@@ -16,10 +17,7 @@ interface HeaderProps {
 
 const STICKY_HEADER_THRESHOLD = 240;
 
-const Header: React.FC<HeaderProps> = ({
-                                           currentPage,
-                                           setCurrentPage,
-                                       }) => {
+const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
     const [expanded, setExpanded] = useState(false); // Is Menu Expanded?
     const [hidden, setHidden] = useState(true);
     const scrollY = useScrollY();
@@ -37,14 +35,18 @@ const Header: React.FC<HeaderProps> = ({
         setExpanded((current) => !current);
     };
 
-    const linkClicked = (_: React.MouseEvent<HTMLElement, MouseEvent>, value: string) => {
+    const linkClicked = (
+        _: React.MouseEvent<HTMLElement, MouseEvent>,
+        value: string
+    ) => {
         setExpanded(false);
         setCurrentPage(value);
     };
 
     const handleAnimationEnd: React.AnimationEventHandler = (e) => {
         if (
-            e.animationName === "collapse_animation" || e.animationName === "expand_animation"
+            e.animationName === 'collapse_animation' ||
+            e.animationName === 'expand_animation'
         ) {
             setHidden(!expanded);
         }
@@ -53,18 +55,25 @@ const Header: React.FC<HeaderProps> = ({
     const isSticky = scrollY > STICKY_HEADER_THRESHOLD;
 
     return (
-        <header className={classNames(style.headerWrapper, {
-            [style.stick]: isSticky,
-        })}>
-            <div className={classNames(style.headerInner, {
+        <header
+            className={classNames(style.headerWrapper, {
                 [style.stick]: isSticky,
-                [style.show]: scrollDirection === "up" && isSticky,
-                [style.hide]: scrollDirection === "down" && isSticky
-            })}>
+            })}
+        >
+            <div
+                className={classNames(style.headerInner, {
+                    [style.stick]: isSticky,
+                    [style.show]: scrollDirection === 'up' && isSticky,
+                    [style.hide]: scrollDirection === 'down' && isSticky,
+                })}
+            >
                 <h1>
-                    <Link to={"/"} className={classNames(style.logoTitle, {
-                        menuOpen: expanded,
-                    })}>
+                    <Link
+                        to={'/'}
+                        className={classNames(style.logoTitle, {
+                            menuOpen: expanded,
+                        })}
+                    >
                         Yahya Fati
                     </Link>
                 </h1>
@@ -83,61 +92,80 @@ const Header: React.FC<HeaderProps> = ({
                             [style.hidden]: hidden,
                         })}
                     >
-                        <div className={style.menu} onAnimationEnd={handleAnimationEnd}>
+                        <div
+                            className={style.menu}
+                            onAnimationEnd={handleAnimationEnd}
+                        >
                             <ul>
                                 <li
                                     className={classNames({
-                                        [style.active]: currentPage === "home",
+                                        [style.active]: currentPage === 'home',
                                     })}
                                 >
                                     <HashLink
-                                        onClick={(e) => linkClicked(e, "home")}
-                                        to={"/#homeSection"}
+                                        onClick={(e) => linkClicked(e, 'home')}
+                                        to={'/#homeSection'}
                                     >
                                         Home
                                     </HashLink>
                                 </li>
                                 <li
                                     className={classNames({
-                                        [style.active]: currentPage === "services",
+                                        [style.active]:
+                                            currentPage === 'services',
                                     })}
                                 >
                                     <HashLink
-                                        onClick={(e) => linkClicked(e, "services")}
-                                        to={"/#servicesSection"}
+                                        onClick={(e) =>
+                                            linkClicked(e, 'services')
+                                        }
+                                        to={'/#servicesSection'}
                                     >
                                         Services
                                     </HashLink>
                                 </li>
                                 <li
                                     className={classNames({
-                                        [style.active]: currentPage === "projects",
+                                        [style.active]:
+                                            currentPage === 'projects',
                                     })}
                                 >
                                     <HashLink
-                                        onClick={(e) => linkClicked(e, "projects")}
+                                        onClick={(e) =>
+                                            linkClicked(e, 'projects')
+                                        }
                                         to="/#projectSection"
                                     >
                                         Works
                                     </HashLink>
                                 </li>
-                                {!DISABLE_TESTIMONIAL && <li
-                                    className={classNames({
-                                        [style.active]: currentPage === "testimonials",
-                                    })}
-                                >
-                                    <HashLink
-                                        onClick={(e) => linkClicked(e, "projects")}
-                                        to="/#testimonialSection"
+                                {!DISABLE_TESTIMONIAL && (
+                                    <li
+                                        className={classNames({
+                                            [style.active]:
+                                                currentPage === 'testimonials',
+                                        })}
                                     >
-                                        Testimonials
-                                    </HashLink>
-                                </li>}
+                                        <HashLink
+                                            onClick={(e) =>
+                                                linkClicked(e, 'projects')
+                                            }
+                                            to="/#testimonialSection"
+                                        >
+                                            Testimonials
+                                        </HashLink>
+                                    </li>
+                                )}
 
-                                <li className={style.hireMe} onClick={(e) => linkClicked(e, "contact")}>
+                                <li
+                                    className={style.hireMe}
+                                    onClick={(e) => linkClicked(e, 'contact')}
+                                >
                                     <Link
-                                        onClick={(e) => linkClicked(e, "contact")}
-                                        to={"/contact"}
+                                        onClick={(e) =>
+                                            linkClicked(e, 'contact')
+                                        }
+                                        to={'/contact'}
                                     >
                                         Hire Me
                                     </Link>

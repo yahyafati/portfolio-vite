@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import StandingManSVG from '@svg/Home.svg?react';
 import { Link } from 'react-router-dom';
 

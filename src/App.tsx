@@ -1,14 +1,13 @@
-import {useState,} from "react";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import LandingPage from "./component/landingPage/LandingPage";
-import Header from "./component/header/Header";
-import ContactPage from "./component/contact/ContactPage";
+import { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import LandingPage from './component/landingPage/LandingPage';
+import Header from './component/header/Header';
+import ContactPage from './component/contact/ContactPage';
 
-import "./style/app/App.scss";
+import './style/app/App.scss';
 
 const App = () => {
-    const [currentPage, setCurrentPage] = useState("home");
-
+    const [currentPage, setCurrentPage] = useState('home');
 
     return (
         <BrowserRouter>
@@ -18,14 +17,8 @@ const App = () => {
                     setCurrentPage={setCurrentPage}
                 />
                 <Switch>
-                    <Route path={"/contact"} component={ContactPage}/>
-                    <Route
-                        path="/"
-                        children={
-                            <LandingPage/>
-                        }
-                        exact
-                    />
+                    <Route path={'/contact'} component={ContactPage} />
+                    <Route path="/" children={<LandingPage />} exact />
                 </Switch>
             </div>
         </BrowserRouter>
