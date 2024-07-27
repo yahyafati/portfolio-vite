@@ -1,0 +1,38 @@
+@import "@styles/variables.scss";
+@import "@styles/animations.scss";
+
+$primary-color-transparent: rgba($primary-color, 0.5);
+
+
+.flickeringBold {
+  user-select: none;
+
+  .word {
+    display: inline-block;
+    padding-right: 0.5rem;
+
+
+    .flickeringChar {
+      animation: bold 15s infinite linear alternate;
+    }
+
+
+  }
+}
+
+
+@keyframes bold {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    //font-weight: $font-weight-bold;
+    //text-shadow: 0 0 .5rem $primary-color-transparent;
+    border-bottom: 1px solid $primary-color;
+  }
+  100% {
+    opacity: 1;
+    //font-weight: $font-weight-regular;
+    border-bottom: .5px solid transparent;
+  }
+}

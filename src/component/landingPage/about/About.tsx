@@ -2,6 +2,7 @@ import HiFromDev from '@svg/About.svg?react';
 import style from './style.module.scss';
 import { useComponentInView } from '../../../hooks';
 import classNames from 'classnames';
+import FlickeringBold from '../../flickering-bold';
 
 const About = () => {
     const isInView = useComponentInView('aboutSection');
@@ -19,16 +20,38 @@ const About = () => {
                 </div>
                 <div className={style.aboutText}>
                     <h2>
-                        What can I say! I just{' '}
-                        <span className={style.love}>love</span> to
-                        <span className={style.code}> code</span>.
+                        <FlickeringBold
+                            texts={[
+                                { text: 'What can I say! I just' },
+                                {
+                                    text: 'love',
+                                    className: style.love,
+                                },
+                                {
+                                    text: ' to',
+                                },
+                                {
+                                    text: ' code',
+                                    className: style.code,
+                                },
+                            ]}
+                            delay={50}
+                        />
                     </h2>
                     <p className={style.about}>
                         Hi, I’m Yahya. I’m the{' '}
-                        <strong>Passionate Programmer</strong>. I love builiding
-                        stuff (Software stuff obviously). I’m a Fullstack Web
-                        Developer and Android Developer with experience in
-                        various technologies.
+                        <FlickeringBold
+                            texts={[
+                                {
+                                    text: 'Passionate Developer',
+                                    className: style.passionate,
+                                },
+                            ]}
+                            delay={60}
+                        />
+                        . I love builiding stuff (Software stuff obviously). I’m
+                        a Fullstack Web Developer and Android Developer with
+                        experience in various technologies.
                     </p>
                 </div>
             </div>

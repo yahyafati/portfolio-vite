@@ -46,6 +46,12 @@
 
     .aboutImg {
       width: 80%;
+
+      :global(#arm) {
+        position: relative;
+        display: inline-block;
+        animation: wave_arms 1s infinite;
+      }
     }
   }
 
@@ -74,7 +80,7 @@
       font-weight: $font-weight-light;
       font-size: 1.2rem;
 
-      strong {
+      .passionate {
         color: $primary-color;
         font-weight: $font-weight-bold;
       }
@@ -83,5 +89,14 @@
         font-size: 0.85rem;
       }
     }
+  }
+}
+
+@keyframes wave_arms {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  100% {
+    transform: rotate(-10deg) translate(-50px, -0px);
   }
 }
