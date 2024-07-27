@@ -1,15 +1,19 @@
-import {useState, useEffect} from "react";
-import standingManSVG from "@svg/Home.svg";
-import {Link} from "react-router-dom";
+import { useState, useEffect } from 'react';
+import StandingManSVG from '@svg/Home.svg?react';
+import { Link } from 'react-router-dom';
 
-import style from "./style.module.scss";
-import classNames from "classnames";
+import style from './style.module.scss';
+import classNames from 'classnames';
 
-const MY_TITLE = ["Full Stack Developer", "React Developer", "Java Developer", "Kotlin Developer"];
+const MY_TITLE = [
+    'Full Stack Developer',
+    'React Developer',
+    'Java Developer',
+    'Kotlin Developer',
+];
 const Home = () => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [currentLetterIndex, setCurrentLetterIndex] = useState(1);
-
 
     useEffect(() => {
         const interval = setTimeout(() => {
@@ -19,13 +23,14 @@ const Home = () => {
                 setCurrentLetterIndex((current) => current + 1);
             } else {
                 setCurrentLetterIndex(1);
-                setCurrentWordIndex((current) => (current + 1) % MY_TITLE.length);
+                setCurrentWordIndex(
+                    (current) => (current + 1) % MY_TITLE.length
+                );
             }
         }, 125);
 
         return () => clearTimeout(interval);
     }, [currentLetterIndex]);
-
 
     return (
         <div id="homeSection" className={style.homeSection}>
@@ -36,23 +41,22 @@ const Home = () => {
                     {MY_TITLE[currentWordIndex].slice(0, currentLetterIndex)}
                 </p>
                 <div className={style.buttons}>
-                    <Link to={"/contact"} className={classNames(style.button, style.primary)}>
+                    <Link
+                        to={'/contact'}
+                        className={classNames(style.button, style.primary)}
+                    >
                         Contact Me
                     </Link>
                     <a
-                        href={"/Resume.pdf"}
-                        target={"_blank"}
+                        href={'/Resume.pdf'}
+                        target={'_blank'}
                         className={classNames(style.button)}
                     >
                         Get Resume
                     </a>
                 </div>
             </div>
-            <img
-                className={style.introImg}
-                src={standingManSVG}
-                alt="A Man Standing and Using a phone"
-            />
+            <StandingManSVG className={style.introImg} />
         </div>
     );
 };

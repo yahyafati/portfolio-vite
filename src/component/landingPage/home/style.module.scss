@@ -125,6 +125,11 @@
   .introImg {
     width: 50%;
 
+    :global(#person) {
+      animation: float_up 2s infinite alternate linear;
+      display: block;
+    }
+
     @media screen and (max-width: 480px) {
       display: none;
     }
@@ -132,6 +137,15 @@
     @media screen and (max-width: 640px) and (min-width: 321px) {
       width: 35%;
     }
+  }
+}
+
+@keyframes float_up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1rem);
   }
 }
 
