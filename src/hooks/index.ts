@@ -44,3 +44,29 @@ export function useScrollDirection(): ScrollDirection {
 
     return goingUp ? 'up' : 'down';
 }
+
+export function useComponentInView(id: string): boolean {
+    const [inView, setInView] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setInView(entry.isIntersecting);
+            },
+            { threshold: 0.5 }
+        );
+
+        const element = document.getElementById(id);
+        if (element) {
+            observer.observe(element);
+        }
+
+        return () => {
+            if (element) {
+                observer.unobserve(element);
+            }
+        };
+    }, [id]);
+
+    return inView;
+}

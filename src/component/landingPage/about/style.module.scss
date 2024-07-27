@@ -1,17 +1,31 @@
 @import "@styles/variables.scss";
+@import "@styles/animations.scss";
 
-.aboutSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
-  border-radius: 0px 0px 100px 100px;
-
+.aboutSectionWrapper {
   background: linear-gradient(
                   180deg,
                   $lighter-background-color 0%,
                   $background-color 100%
   );
+
+  &.inView {
+    .imgContainer {
+      animation: slideLeft 1s ease-out;
+    }
+
+    .aboutText {
+      animation: slideRight 1s ease-out;
+    }
+  }
+}
+
+.aboutSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 3rem;
+  border-radius: 0 0 100px 100px;
+
 
   @media screen and (max-width: 768px) {
     padding: 5rem 2rem;
@@ -36,7 +50,6 @@
   }
 
   .aboutText {
-    flex-basis: 1;
     text-align: center;
 
     h2 {
