@@ -1,6 +1,8 @@
 @import "@styles/variables.scss";
+@import "@styles/mixins.scss";
 
 .servicesSection {
+  user-select: none;
   display: flex;
   flex-direction: column;
   padding: 3rem;
@@ -15,7 +17,7 @@
     font-weight: $font-weight-medium;
     padding-bottom: 2rem;
 
-    strong {
+    .strong {
       color: $primary-color;
     }
 
@@ -56,14 +58,54 @@
       }
 
       .card {
+        position: relative;
+
+        &:hover {
+
+
+          .frontside {
+            transform: rotateX(180deg);
+          }
+
+          .backside {
+            transform: rotateX(0deg);
+          }
+        }
+      }
+
+      .backside {
+        @include absolute_fill;
+        backface-visibility: hidden;
+        transform: rotateX(-180deg);
+        transition: all 1s;
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        outline: 1px solid $primary-color;
+
+        .description {
+          font-weight: $font-weight-light;
+          font-size: .9rem;
+        }
+      }
+
+      .frontside {
+        backface-visibility: hidden;
         border-radius: 5px;
         align-items: center;
         background-color: $card-background;
         padding: 2rem 1rem;
+        transition: all 1s;
+
 
         &.notBigScreen {
           display: none;
         }
+
 
         .cardIcon {
           width: 5rem;

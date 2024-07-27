@@ -4,6 +4,7 @@ import { FaPaintBrush } from 'react-icons/fa';
 
 import style from './style.module.scss';
 import classNames from 'classnames';
+import FlickeringBold from '../../flickering-bold';
 
 const servicesMap = {
     // card-icon mobile
@@ -20,6 +21,7 @@ interface ServiceCardProps {
     type: 'mobile' | 'web' | 'design';
     title: string;
     body: string;
+    detail: string;
     className?: string;
 }
 
@@ -27,13 +29,20 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     type,
     title,
     body,
+    detail,
     className,
 }) => {
     return (
-        <div className={classNames(style.card, className)}>
-            {servicesMap[type]}
-            <h3>{title}</h3>
-            <p>{body}</p>
+        <div className={style.card}>
+            <div className={classNames(style.frontside, className)}>
+                {servicesMap[type]}
+                <h3>{title}</h3>
+                <p>{body}</p>
+            </div>
+            <div className={style.backside}>
+                <FlickeringBold texts={[{ text: title }]} delay={100} />
+                <p className={style.description}>{detail}</p>
+            </div>
         </div>
     );
 };
