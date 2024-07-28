@@ -30,6 +30,8 @@ const Home = () => {
         }, 125);
 
         return () => clearTimeout(interval);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentLetterIndex]);
 
     return (

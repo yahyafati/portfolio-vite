@@ -1,8 +1,8 @@
 import HiFromDev from '@svg/About.svg?react';
 import style from './style.module.scss';
-import { useComponentInView } from '../../../hooks';
+import { useComponentInView } from '@/hooks';
 import classNames from 'classnames';
-import FlickeringBold from '../../flickering-bold';
+import FlickeringBold from '@components/flickering-bold';
 
 const About = () => {
     const isInView = useComponentInView('aboutSection');
