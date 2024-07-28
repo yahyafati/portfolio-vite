@@ -24,7 +24,31 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@components/*": [
+        "./src/component/*"
+      ],
+      "@styles/*": [
+        "./src/style/*"
+      ],
+      "@svg/*": [
+        "./src/svg/*"
+      ]
+    },
+    "types": [
+      "node",
+      "react",
+      "react-dom",
+      "vite-plugin-svgr/client"
+    ]
   },
   "include": [
     "src"

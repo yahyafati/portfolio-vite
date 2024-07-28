@@ -16,7 +16,7 @@ const compat = new FlatCompat({
 });
 
 export default [{
-    ignores: ["**/dist", "**/.eslintrc.cjs"],
+    ignores: ["**/dist", "**/.eslintrc.cjs", "**/*.cjs"],
 }, ...fixupConfigRules(compat.extends(
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -39,4 +39,6 @@ export default [{
             allowConstantExport: true,
         }],
     },
+
+    files: ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
 }];

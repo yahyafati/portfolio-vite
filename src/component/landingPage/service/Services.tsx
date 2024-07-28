@@ -4,10 +4,8 @@ import ServiceCard from './ServiceCard';
 
 import style from './style.module.scss';
 import FlickeringBold from '../../flickering-bold';
-import { useComponentInView } from '../../../hooks';
 
 const Services = () => {
-    const isInView = useComponentInView('servicesSection');
     return (
         <div id="servicesSection">
             <div className={style.servicesSection}>
