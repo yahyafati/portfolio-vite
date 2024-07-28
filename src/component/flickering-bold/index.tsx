@@ -12,12 +12,14 @@ interface FlickeringBoldProps {
     texts: TextProps[];
     delay: number;
     disabled?: boolean;
+    noUnderline?: boolean;
 }
 
 const FlickeringBold: React.FC<FlickeringBoldProps> = ({
     texts,
     delay,
     disabled,
+    noUnderline,
 }) => {
     let count = 0;
     const totalDelay = texts.reduce((acc, { text }) => {
@@ -64,7 +66,11 @@ const FlickeringBold: React.FC<FlickeringBoldProps> = ({
                                             <span
                                                 key={`${charIndex}-${char}`}
                                                 className={classNames(
-                                                    styles.flickeringChar
+                                                    styles.flickeringChar,
+                                                    {
+                                                        [styles.underline]:
+                                                            !noUnderline,
+                                                    }
                                                 )}
                                                 style={{
                                                     animationDelay: `${count * delay}ms`,

@@ -1,4 +1,4 @@
-@import "@styles/variables.scss";
+@import "@styles/variables.module.scss";
 @import "@styles/animations.scss";
 
 $primary-color-transparent: rgba($primary-color, 0.5);
@@ -14,9 +14,11 @@ $primary-color-transparent: rgba($primary-color, 0.5);
 
     .flickeringChar {
       animation: bold 15s infinite linear alternate;
+
+      &.underline {
+        animation: bold 15s infinite linear alternate, underline 15s infinite linear alternate;
+      }
     }
-
-
   }
 }
 
@@ -26,13 +28,19 @@ $primary-color-transparent: rgba($primary-color, 0.5);
     opacity: 0.5;
   }
   50% {
-    //font-weight: $font-weight-bold;
-    //text-shadow: 0 0 .5rem $primary-color-transparent;
-    border-bottom: 1px solid $primary-color;
   }
   100% {
     opacity: 1;
-    //font-weight: $font-weight-regular;
+  }
+}
+
+@keyframes underline {
+  0% {
+  }
+  50% {
+    border-bottom: 1px solid $primary-color;
+  }
+  100% {
     border-bottom: .5px solid transparent;
   }
 }

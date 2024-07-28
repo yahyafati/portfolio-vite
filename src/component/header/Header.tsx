@@ -5,7 +5,8 @@ import { HashLink } from 'react-router-hash-link';
 import style from './style.module.scss';
 import classNames from 'classnames';
 import OutsideClickHandler from 'react-outside-click-handler';
-import { useScrollDirection, useScrollY } from '../../hooks';
+import { useScrollDirection, useScrollY } from '@/hooks';
+import Logo from '@/component/header/logo';
 
 const DISABLE_TESTIMONIAL =
     import.meta.env.VITE_REACT_APP_DISABLE_TESTIMONIALS === 'true';
@@ -67,16 +68,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                     [style.hide]: scrollDirection === 'down' && isSticky,
                 })}
             >
-                <h1>
-                    <Link
-                        to={'/'}
-                        className={classNames(style.logoTitle, {
-                            menuOpen: expanded,
-                        })}
-                    >
-                        Yahya Fati
-                    </Link>
-                </h1>
+                <Logo expanded={expanded} />
 
                 <OutsideClickHandler onOutsideClick={() => setExpanded(false)}>
                     <Hamburger

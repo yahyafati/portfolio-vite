@@ -1,4 +1,4 @@
-@import "@styles/variables.scss";
+@import "@styles/variables.module.scss";
 
 .headerWrapper {
   height: 7.2rem;
@@ -37,12 +37,6 @@
     }
   }
 
-  .logoTitle {
-    color: $primary-color;
-    font-family: $font-family-logo;
-    font-weight: $font-weight-regular;
-    font-size: 2rem;
-  }
 
   .navbarLinkContainer {
     display: flex;
@@ -99,12 +93,6 @@
       width: calc(100% - 4rem);
     }
 
-    .logoTitle {
-      h1 {
-        font-size: 1.5rem;
-        font-weight: $font-weight-light;
-      }
-    }
 
     .navbarLinkContainer {
       ul {
@@ -123,12 +111,6 @@
       width: calc(100% - 2rem);
     }
 
-    .logoTitle {
-      h1 {
-        font-size: 1.25rem;
-        font-weight: $font-weight-light;
-      }
-    }
 
     .navbarLinkContainer {
       ul {
