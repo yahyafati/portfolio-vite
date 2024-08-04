@@ -1,0 +1,13 @@
+{
+  "firstName": "Yahya",
+  "lastName": "Haji",
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "testimonials": "Testimonials"
+  },
+  "contact": {
+    "hireMe": "Hire Me"
+  }
+}

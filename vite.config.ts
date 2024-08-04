@@ -37,6 +37,10 @@ export default defineConfig({
                 find: '@svg',
                 replacement: path.resolve(__dirname, 'src', 'svg'),
             },
+            {
+                find: '@locales',
+                replacement: path.resolve(__dirname, 'src', 'locales'),
+            },
         ],
     },
 });

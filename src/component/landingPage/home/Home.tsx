@@ -4,16 +4,25 @@ import { Link } from 'react-router-dom';
 
 import style from './style.module.scss';
 import classNames from 'classnames';
+import { FormattedMessage, useIntl } from 'react-intl';
 
-const MY_TITLE = [
-    'Full Stack Developer',
-    'React Developer',
-    'Java Developer',
-    'Kotlin Developer',
-];
+const MY_TITLES_LENGTH = 4;
 const Home = () => {
+    const { formatMessage: intlFmt } = useIntl();
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [currentLetterIndex, setCurrentLetterIndex] = useState(1);
+
+    const MY_TITLE_ALL = Array.from({ length: MY_TITLES_LENGTH }, (_, i) =>
+        intlFmt({ id: `landing.home.titles.title${i + 1}`, defaultMessage: '' })
+    );
+
+    const MY_TITLE = MY_TITLE_ALL.filter((title) => title !== '');
+
+    if (MY_TITLE.length !== MY_TITLES_LENGTH) {
+        throw new Error(
+            'The length of the title in the translation file is not equal to MY_TITLES_LENGTH'
+        );
+    }
 
     useEffect(() => {
         const interval = setTimeout(() => {
@@ -37,8 +46,16 @@ const Home = () => {
     return (
         <div id="homeSection" className={style.homeSection}>
             <div className={style.introText}>
-                <p className={style.hi}>Hi, I'm</p>
-                <p className={style.name}>Yahya Fati</p>
+                <div className={style.hiContainer}>
+                    <FormattedMessage
+                        id="landing.home.heroText"
+                        values={{
+                            name: (
+                                <span className={style.name}>Yahya Fati</span>
+                            ),
+                        }}
+                    />
+                </div>
                 <p className={style.work}>
                     {MY_TITLE[currentWordIndex].slice(0, currentLetterIndex)}
                 </p>
@@ -47,14 +64,14 @@ const Home = () => {
                         to={'/contact'}
                         className={classNames(style.button, style.primary)}
                     >
-                        Contact Me
+                        {intlFmt({ id: 'landing.home.contactMe' })}
                     </Link>
                     <a
                         href={'/Resume.pdf'}
                         target={'_blank'}
                         className={classNames(style.button)}
                     >
-                        Get Resume
+                        {intlFmt({ id: 'landing.home.getResume' })}
                     </a>
                 </div>
             </div>

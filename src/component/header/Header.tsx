@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { useScrollDirection, useScrollY } from '@/hooks';
 import Logo from '@/component/header/logo';
+import { FormattedMessage } from 'react-intl';
 
 const DISABLE_TESTIMONIAL =
     import.meta.env.VITE_REACT_APP_DISABLE_TESTIMONIALS === 'true';
@@ -98,7 +99,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                                         onClick={(e) => linkClicked(e, 'home')}
                                         to={'/#homeSection'}
                                     >
-                                        Home
+                                        <FormattedMessage
+                                            id={'navigation.home'}
+                                        />
                                     </HashLink>
                                 </li>
                                 <li
@@ -113,7 +116,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                                         }
                                         to={'/#servicesSection'}
                                     >
-                                        Services
+                                        <FormattedMessage
+                                            id={'navigation.services'}
+                                        />
                                     </HashLink>
                                 </li>
                                 <li
@@ -128,7 +133,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                                         }
                                         to="/#projectSection"
                                     >
-                                        Works
+                                        <FormattedMessage
+                                            id={'navigation.projects'}
+                                        />
                                     </HashLink>
                                 </li>
                                 {!DISABLE_TESTIMONIAL && (
@@ -144,7 +151,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                                             }
                                             to="/#testimonialSection"
                                         >
-                                            Testimonials
+                                            <FormattedMessage
+                                                id={'navigation.testimonials'}
+                                            />
                                         </HashLink>
                                     </li>
                                 )}
@@ -159,7 +168,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                                         }
                                         to={'/contact'}
                                     >
-                                        Hire Me
+                                        <FormattedMessage
+                                            id={'contact.hireMe'}
+                                        />
                                     </Link>
                                 </li>
                             </ul>

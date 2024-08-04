@@ -36,16 +36,20 @@
     flex-direction: column;
     z-index: $introTextZIndex;
 
-    .hi {
+    .hiContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       font-size: 2rem;
+
+      .name {
+        width: min-content;
+        color: $primary-color;
+        font-weight: $font-weight-bold;
+        font-size: 7rem;
+      }
     }
 
-    .name {
-      width: min-content;
-      color: $primary-color;
-      font-weight: $font-weight-bold;
-      font-size: 7rem;
-    }
 
     .work {
       position: relative;
@@ -66,13 +70,14 @@
     }
 
     @media screen and (max-width: 768px) {
-      .hi {
+      .hiContainer {
         font-size: 1.5rem;
+
+        .name {
+          font-size: 5rem;
+        }
       }
 
-      .name {
-        font-size: 5rem;
-      }
 
       .work {
         font-size: 1.2rem;
@@ -83,13 +88,14 @@
     @media screen and (max-width: 640px) and (min-width: 481px) {
       width: 180px;
 
-      .hi {
+      .hiContainer {
         font-size: 1rem;
+
+        .name {
+          font-size: 3rem;
+        }
       }
 
-      .name {
-        font-size: 3rem;
-      }
 
       .work {
         font-size: 1rem;
@@ -104,9 +110,12 @@
     }
 
     @media screen and (max-width: 320px) {
-      .name {
-        font-size: 3.5rem;
+      .hiContainer {
+        .name {
+          font-size: 3.5rem;
+        }
       }
+
 
       .work {
         font-weight: $font-weight-light;

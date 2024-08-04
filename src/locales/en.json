@@ -1,0 +1,35 @@
+{
+  "firstName": "Yahya",
+  "lastName": "Haji",
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "testimonials": "Testimonials"
+  },
+  "landing": {
+    "home": {
+      "heroText": "Hi, I'm {name}",
+      "titles": {
+        "title1": "Full Stack Developer",
+        "title2": "React Developer",
+        "title3": "Java Developer",
+        "title4": "Freelancer"
+      },
+      "contactMe": "Contact Me",
+      "getResume": "Get Resume"
+    }
+  },
+  "contact": {
+    "hireMe": "Hire Me",
+    "hi": "Hi, there!",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "optional": "Optional",
+      "body": "How can I be of service?",
+      "send": "Send"
+    }
+  }
+}

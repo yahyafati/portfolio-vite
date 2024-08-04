@@ -1,7 +1,9 @@
 import React from 'react';
 import style from './style.module.scss';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 const ContactForm = () => {
+    const { formatMessage } = useIntl();
     const handleFormSubmit: React.FormEventHandler = (e) => {
         e.preventDefault();
     };
@@ -9,7 +11,9 @@ const ContactForm = () => {
     return (
         <div className={style.contactFormContainer}>
             <h2 className={style.formWelcome}>
-                <strong>Hi</strong>, there
+                <strong>
+                    <FormattedMessage id={'contact.hi'} />
+                </strong>
             </h2>
             <form
                 className={style.contactForm}
@@ -19,7 +23,7 @@ const ContactForm = () => {
             >
                 <input
                     type={'text'}
-                    placeholder={'Full Name'}
+                    placeholder={formatMessage({ id: 'contact.form.fullName' })}
                     name={'fullName'}
                     required
                     autoCapitalize={'on'}
@@ -28,21 +32,21 @@ const ContactForm = () => {
                 />
                 <input
                     type={'email'}
-                    placeholder={'Email'}
+                    placeholder={formatMessage({ id: 'contact.form.email' })}
                     name={'email'}
                     required
                 />
                 <input
                     type={'tel'}
-                    placeholder={'Phone Number (Optional)'}
+                    placeholder={formatMessage({ id: 'contact.form.phone' })}
                     name={'phone'}
                 />
                 <textarea
-                    placeholder={'How can I be of service?'}
+                    placeholder={formatMessage({ id: 'contact.form.body' })}
                     name={'body'}
                 />
                 <button className={style.submitButton} type={'submit'}>
-                    Send
+                    <FormattedMessage id={'contact.form.send'} />
                 </button>
             </form>
         </div>
