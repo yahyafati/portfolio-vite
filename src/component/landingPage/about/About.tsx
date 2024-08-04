@@ -2,9 +2,11 @@ import HiFromDev from '@svg/About.svg?react';
 import style from './style.module.scss';
 import { useComponentInView } from '@/hooks';
 import classNames from 'classnames';
-import FlickeringBold from '@components/flickering-bold';
+import { FormattedMessage, useIntl } from 'react-intl';
+import FlickeringBold from '@/component/flickering-bold/InternationalizedBold.tsx';
 
 const About = () => {
+    const { formatMessage: intlFmt } = useIntl();
     const isInView = useComponentInView('aboutSection');
 
     return (
@@ -21,37 +23,45 @@ const About = () => {
                 <div className={style.aboutText}>
                     <h2>
                         <FlickeringBold
-                            texts={[
-                                { text: 'What can I say! I just' },
-                                {
-                                    text: 'love',
+                            text={intlFmt({
+                                id: 'landing.about.title.base',
+                                defaultMessage: '',
+                            })}
+                            formatter={{
+                                love: {
+                                    text: intlFmt({
+                                        id: 'landing.about.title.love',
+                                        defaultMessage: '',
+                                    }),
                                     className: style.love,
                                 },
-                                {
-                                    text: ' to',
-                                },
-                                {
-                                    text: ' code',
+                                code: {
+                                    text: intlFmt({
+                                        id: 'landing.about.title.code',
+                                        defaultMessage: '',
+                                    }),
                                     className: style.code,
                                 },
-                            ]}
+                            }}
                             delay={50}
                         />
                     </h2>
                     <p className={style.about}>
-                        Hi, I’m Yahya. I’m the{' '}
-                        <FlickeringBold
-                            texts={[
-                                {
-                                    text: 'Passionate Developer',
-                                    className: style.passionate,
-                                },
-                            ]}
-                            delay={60}
+                        <FormattedMessage
+                            id="landing.about.body.base"
+                            values={{
+                                enthusiastic: (
+                                    <FlickeringBold
+                                        text={intlFmt({
+                                            id: 'landing.about.body.enthusiastic',
+                                            defaultMessage: '',
+                                        })}
+                                        className={style.passionate}
+                                        delay={60}
+                                    />
+                                ),
+                            }}
                         />
-                        . I love builiding stuff (Software stuff obviously). I’m
-                        a Fullstack Web Developer and Android Developer with
-                        experience in various technologies.
                     </p>
                 </div>
             </div>

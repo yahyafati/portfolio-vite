@@ -5,6 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 
 import style from './style.module.scss';
+import { FormattedMessage } from 'react-intl';
 
 export interface ITestimonial {
     body: string;
@@ -61,7 +62,16 @@ const Testimonial: React.FC<TestimonialProps> = () => {
     return (
         <div id="testimonialSection" className={style.testimonialSection}>
             <h2>
-                <strong>Kinds words</strong> I've received over the years
+                <FormattedMessage
+                    id="landing.testimonials.title.base"
+                    values={{
+                        kindWords: (
+                            <strong>
+                                <FormattedMessage id="landing.testimonials.title.kindWords" />
+                            </strong>
+                        ),
+                    }}
+                />
             </h2>
             <Carousel
                 className={style.testimonials}

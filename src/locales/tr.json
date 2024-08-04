@@ -7,7 +7,75 @@
     "projects": "Projects",
     "testimonials": "Testimonials"
   },
+  "landing": {
+    "home": {
+      "heroText": "Hi, I'm {name}",
+      "titles": {
+        "title1": "Full Stack Developer",
+        "title2": "React Developer",
+        "title3": "Java Developer",
+        "title4": "Freelancer"
+      },
+      "contactMe": "Contact Me",
+      "getResume": "Get Resume"
+    },
+    "about": {
+      "title": {
+        "base": "What can I say? I just {love} to {code}.",
+        "love": "love",
+        "code": "code"
+      },
+      "body": {
+        "base": "Hi, I’m Yahya. I’m an {enthusiastic} who loves creating innovative software solutions. With expertise as a Full Stack Web Developer and Android Developer, I’ve worked across a wide range of technologies. I’m always eager to tackle new challenges and push the limits of what’s possible in tech, whether it’s building dynamic web apps or designing intuitive mobile experiences.",
+        "enthusiastic": "enthusiastic developer"
+      }
+    },
+    "service": {
+      "title": {
+        "base": "Here are some of the {services} I offer",
+        "services": "Services"
+      },
+      "services": {
+        "mobile": {
+          "title": "Mobile Development",
+          "body": "Build highly interactive and intuitive mobile apps",
+          "details": "I'm a mobile app developer with experience in building apps for both iOS and Android. I can help you create an app that will engage users and provide value to your business."
+        },
+        "web": {
+          "title": "Web Development",
+          "body": "Develop Solid, Reliable, Secure and Scalable Websites from scratch",
+          "details": "I'm a web developer with experience in building websites for a variety of clients. I can help you create a website that will attract users and help you achieve your business goals."
+        },
+        "design": {
+          "title": "UI/UX Design",
+          "body": "Design sweet UI with amazing detail to user experience",
+          "details": "I'm a UI/UX designer with a passion for creating beautiful and intuitive designs. I have experience in designing websites, mobile apps, and other digital products. I can help you create a design that will make your product stand out and attract users."
+        }
+      }
+    },
+    "projects": {
+      "title": {
+        "base": "So you wanna see my previous {projects}",
+        "projects": "Projects"
+      }
+    },
+    "testimonials": {
+      "title": {
+        "base": "{kindWords} I've received over the years",
+        "kindWords": "Kind Words"
+      }
+    }
+  },
   "contact": {
-    "hireMe": "Hire Me"
+    "hireMe": "Hire Me",
+    "hi": "Hi, there!",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "optional": "Optional",
+      "body": "How can I be of service?",
+      "send": "Send"
+    }
   }
 }

@@ -8,12 +8,27 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 
 import style from './style.module.scss';
+import { FormattedMessage, useIntl } from 'react-intl';
+import InternationalizedBold from '@/component/flickering-bold/InternationalizedBold.tsx';
 
 const Projects = () => {
+    const intl = useIntl();
     return (
         <div id="projectSection" className={style.projectSection}>
             <h2>
-                So you wanna see my previous <strong>Projects</strong>
+                <FormattedMessage
+                    id="landing.projects.title.base"
+                    values={{
+                        projects: (
+                            <InternationalizedBold
+                                text={intl.formatMessage({
+                                    id: 'landing.projects.title.projects',
+                                })}
+                                delay={50}
+                            />
+                        ),
+                    }}
+                />
             </h2>
             {/* <div className="projectList"> */}
             <Carousel
