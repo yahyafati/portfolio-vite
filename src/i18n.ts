@@ -3,8 +3,16 @@ import trMessages from '@locales/tr.json';
 import React from 'react';
 import { US, TR } from 'country-flag-icons/react/3x2';
 
-const flattenMessages = (nestedMessages: any, prefix = '') => {
-    return Object.keys(nestedMessages).reduce((messages: any, key) => {
+type NestedMessages = {
+    [key: string]: string | NestedMessages;
+};
+
+type Messages = {
+    [key: string]: string;
+};
+
+const flattenMessages = (nestedMessages: NestedMessages, prefix = '') => {
+    return Object.keys(nestedMessages).reduce((messages, key) => {
         const value = nestedMessages[key];
         const prefixedKey = prefix ? `${prefix}.${key}` : key;
 
@@ -15,7 +23,7 @@ const flattenMessages = (nestedMessages: any, prefix = '') => {
         }
 
         return messages;
-    }, {});
+    }, {} as Messages);
 };
 
 export const messages = {

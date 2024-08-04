@@ -1,6 +1,5 @@
 import React from 'react';
 import OriginalFlickeringBold from './index';
-import classNames from 'classnames';
 
 interface FlickeringBoldProps {
     text: string;
@@ -25,7 +24,7 @@ const FlickeringBold: React.FC<FlickeringBoldProps> = ({
     className,
 }) => {
     if (!text) return null;
-    const texts = text.split(/({.*?})/g).map((part, index) => {
+    const texts = text.split(/({.*?})/g).map((part) => {
         const key = part.replace(/[{}]/g, '');
         const replace = formatter[key];
         console.log({ key, replace });

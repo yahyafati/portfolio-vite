@@ -5,7 +5,7 @@ import Header from './component/header/Header';
 import { messages, T_AVAILABLE_LANGUAGE_CODE } from './i18n.ts';
 
 const App = () => {
-    const [locale, setLocale] = useState<T_AVAILABLE_LANGUAGE_CODE>('en');
+    const [locale] = useState<T_AVAILABLE_LANGUAGE_CODE>('en');
     const [currentPage, setCurrentPage] = useState('home');
 
     return (
