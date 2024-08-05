@@ -10,11 +10,11 @@ const App = () => {
 
     useEffect(() => {
         document.documentElement.lang = locale;
-        console.log('Locale:', locale);
     }, [locale]);
 
     return (
         <IntlProvider locale={locale} messages={messages[locale]}>
+            <ShinyPage />
             <BrowserRouter>
                 <div>
                     <Header
@@ -38,5 +38,6 @@ import './style/app/App.scss';
 import { IntlProvider } from 'react-intl';
 import { useLocale } from '@/hooks/locale.ts';
 import LanguageToast from '@/component/language-toast';
+import ShinyPage from '@/component/shine-component/shiny-page';
 
 export default App;
