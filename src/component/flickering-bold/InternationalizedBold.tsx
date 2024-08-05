@@ -27,7 +27,6 @@ const FlickeringBold: React.FC<FlickeringBoldProps> = ({
     const texts = text.split(/({.*?})/g).map((part) => {
         const key = part.replace(/[{}]/g, '');
         const replace = formatter[key];
-        console.log({ key, replace });
         if (replace) {
             return {
                 text: replace.text,

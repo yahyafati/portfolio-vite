@@ -42,3 +42,9 @@ export const AVAILABLE_LANGUAGES: Language[] = [
     { code: 'en', name: 'English', Flag: US },
     { code: 'tr', name: 'Türkçe', Flag: TR },
 ];
+
+export const isLanguageAvailable = (
+    code: string
+): code is T_AVAILABLE_LANGUAGE_CODE => {
+    return AVAILABLE_LANGUAGES.some((lang) => lang.code === code);
+};

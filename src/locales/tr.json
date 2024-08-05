@@ -84,5 +84,15 @@
       "body": "Size nasıl yardımcı olabilirim?",
       "send": "Gönder"
     }
+  },
+  "langToast": {
+    "select": {
+      "title": "Dil Seç",
+      "description": "Bu web sitesi çoklu dillerde mevcuttur."
+    },
+    "selected": {
+      "title": "Dil Seçildi",
+      "description": "{language} dili seçildi."
+    }
   }
 }

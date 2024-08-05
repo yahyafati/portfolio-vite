@@ -84,5 +84,15 @@
       "body": "How can I be of service?",
       "send": "Send"
     }
+  },
+  "langToast": {
+    "select": {
+      "title": "Select Language",
+      "description": "This website is available in multiple languages."
+    },
+    "selected": {
+      "title": "Language Selected",
+      "description": "You have selected {language}."
+    }
   }
 }
