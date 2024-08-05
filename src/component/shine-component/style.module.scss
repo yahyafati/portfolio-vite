@@ -19,14 +19,8 @@
     left: -50%;
     width: 300%;
     height: 300%;
-    background: linear-gradient(
-                    90deg,
-                    rgba(255, 255, 255, 0) 0%,
-                    rgba(255, 255, 255, 0.2) 50%,
-                    rgba(255, 255, 255, 0) 70%
-    );
     transform: rotate(45deg);
-    animation: shiny 2s;
+    animation: shiny 2s linear;
 
   }
 }
@@ -34,8 +28,20 @@
 @keyframes shiny {
   0% {
     transform: translate(-100%, -100%) rotate(45deg);
+    background: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    rgba(255, 255, 255, 0) 70%
+    );
   }
   100% {
     transform: translate(100%, 100%) rotate(45deg);
+    background: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    rgba(255, 255, 255, 0) 70%
+    );
   }
 }

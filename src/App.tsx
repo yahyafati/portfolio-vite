@@ -7,14 +7,19 @@ import { messages } from './i18n.ts';
 const App = () => {
     const [locale, setLocale] = useLocale();
     const [currentPage, setCurrentPage] = useState('home');
+    const [showShiny, setShowShiny] = useState(true);
 
     useEffect(() => {
         document.documentElement.lang = locale;
     }, [locale]);
 
+    const handleAnimationEnd = () => {
+        setShowShiny(false);
+    };
+
     return (
         <IntlProvider locale={locale} messages={messages[locale]}>
-            <ShinyPage />
+            {showShiny && <ShinyPage onAnimationEnd={handleAnimationEnd} />}
             <BrowserRouter>
                 <div>
                     <Header
