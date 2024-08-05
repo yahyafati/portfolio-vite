@@ -64,6 +64,13 @@
         "base": "{kindWords} I've received over the years",
         "kindWords": "Kind Words"
       }
+    },
+    "shallWe": {
+      "title": "Shall we start?",
+      "button": "Let's Go!"
+    },
+    "footer": {
+      "credit": "Designed and Developed by {designer}"
     }
   },
   "contact": {
