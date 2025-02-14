@@ -1,11 +1,40 @@
 import React from 'react';
 import style from './style.module.scss';
+import ReCAPTCHA from "react-google-recaptcha"
 import { FormattedMessage, useIntl } from 'react-intl';
 
+const SITE_KEY = import.meta.env.VITE_REACT_APP_RECAPTCHA_SITE_KEY;
+
 const ContactForm = () => {
+    const captchaRef = React.useRef<ReCAPTCHA>(null);
     const { formatMessage } = useIntl();
-    const handleFormSubmit: React.FormEventHandler = (e) => {
+
+     const handleFormSubmit: React.FormEventHandler = async (e) => {
         e.preventDefault();
+        const apiGateway = import.meta.env.VITE_REACT_APP_API_GATEWAY_ENDPOINT;
+        const token = captchaRef.current?.getValue();
+        if (!token) {
+            alert('Please complete the captcha');
+            return;
+        }
+        const form = e.target as HTMLFormElement;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        const response = await fetch(`${apiGateway}/contact`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ...data, }),
+        });
+
+        if (response.ok) {
+            alert("Thank you for your message. I'll get back to you soon.");
+            form.reset();
+        } else {
+            alert('Failed to send message');
+        }
     };
 
     return (
@@ -45,6 +74,7 @@ const ContactForm = () => {
                     placeholder={formatMessage({ id: 'contact.form.body' })}
                     name={'body'}
                 />
+                <ReCAPTCHA sitekey={SITE_KEY} ref={captchaRef} />
                 <button className={style.submitButton} type={'submit'}>
                     <FormattedMessage id={'contact.form.send'} />
                 </button>
