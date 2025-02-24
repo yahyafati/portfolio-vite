@@ -82,15 +82,6 @@
                     $background-color 100%
     );
 
-    &.inView {
-        .imgContainer {
-            animation: slide-left 1s ease-out;
-        }
-
-        .aboutText {
-            animation: slide-right 1s ease-out;
-        }
-    }
 }
 
 @keyframes wave-arms {

@@ -1,21 +1,13 @@
 import HiFromDev from '@svg/About.svg?react';
 import style from './style.module.scss';
-import { useComponentInView } from '@/hooks';
-import classNames from 'classnames';
 import { FormattedMessage, useIntl } from 'react-intl';
 import FlickeringBold from '@/component/flickering-bold/InternationalizedBold.tsx';
 
 const About = () => {
     const { formatMessage: intlFmt } = useIntl();
-    const isInView = useComponentInView('aboutSection');
 
     return (
-        <div
-            id="aboutSection"
-            className={classNames(style.aboutSectionWrapper, {
-                [style.inView]: isInView,
-            })}
-        >
+        <div id="aboutSection" className={style.aboutSectionWrapper}>
             <div className={style.aboutSection}>
                 <div className={style.imgContainer}>
                     <HiFromDev className={style.aboutImg} />
