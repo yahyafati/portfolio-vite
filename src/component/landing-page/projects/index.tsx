@@ -9,7 +9,6 @@ import { Carousel } from 'react-responsive-carousel';
 
 import style from './style.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
-import InternationalizedBold from '@/component/flickering-bold/internationalized-bold';
 
 const Projects = () => {
     const intl = useIntl();
@@ -20,12 +19,11 @@ const Projects = () => {
                     id="landing.projects.title.base"
                     values={{
                         projects: (
-                            <InternationalizedBold
-                                text={intl.formatMessage({
+                            <strong className={style.strong}>
+                                {intl.formatMessage({
                                     id: 'landing.projects.title.projects',
                                 })}
-                                delay={50}
-                            />
+                            </strong>
                         ),
                     }}
                 />

@@ -3,7 +3,6 @@ import hereAreServices from '@svg/Services.svg';
 import ServiceCard from './service-card';
 
 import style from './style.module.scss';
-import FlickeringBold from '../../flickering-bold/internationalized-bold';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 const Services = () => {
@@ -15,11 +14,11 @@ const Services = () => {
                     id="landing.service.title.base"
                     values={{
                         services: (
-                            <FlickeringBold
-                                text="Index"
-                                className={style.strong}
-                                delay={100}
-                            />
+                            <strong className={style.strong}>
+                                <FormattedMessage
+                                    id={'landing.service.title.services'}
+                                />
+                            </strong>
                         ),
                     }}
                 />
