@@ -1,0 +1,47 @@
+@import '@styles/variables';
+
+.projectSection {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    height: 100vh;
+
+    @media screen and (width <= 768px) {
+        padding: 5rem 1rem;
+    }
+
+    @media screen and (width <= 320px) {
+        padding: 5rem 0.25rem;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: $font-weight-medium;
+        padding-bottom: 2rem;
+
+        strong {
+            color: $primary-color;
+        }
+
+        @media screen and (width <= 320px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    .projectList {
+        overflow-x: auto;
+        padding: 1rem;
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: white;
+            outline: none;
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            background-color: white;
+        }
+
+    }
+}

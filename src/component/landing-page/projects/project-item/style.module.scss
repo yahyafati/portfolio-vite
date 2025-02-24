@@ -1,0 +1,63 @@
+@import "@/style/variables";
+
+.projectItemContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectItem {
+    border-radius: 5px;
+    background-color: $card-background;
+    padding: 1.5rem 1rem;
+    width: 70%;
+    text-align: center;
+    cursor: grab;
+
+    .projectIcon {
+        height: 10rem;
+        width: 15rem;
+    }
+
+    .titleContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+
+        .title {
+            font-weight: $font-weight-regular;
+            font-size: 1.5rem;
+        }
+
+        .gitIcon {
+            display: flex;
+            font-size: 1.5rem;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    @media screen and (width <= 640px) {
+        flex-grow: 1;
+    }
+
+    @media screen and (width <= 320px) {
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+
+        .projectIcon {
+            height: 5rem;
+            width: 10rem;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: $font-weight-light;
+        }
+    }
+}

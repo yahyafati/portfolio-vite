@@ -1,5 +1,5 @@
 import React from 'react';
-import TestimonialItem from './TestimonialItem';
+import TestimonialItem from './testimonial-item';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';

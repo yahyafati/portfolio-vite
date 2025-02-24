@@ -1,8 +1,8 @@
 import React from 'react';
-import profileSVG from '../../../svg/Profile.svg';
+import profileSVG from '@/svg/Profile.svg';
 
 import style from './style.module.scss';
-import { ITestimonial } from './Testimonial.tsx';
+import type { ITestimonial } from '@/component/landing-page/testimonial';
 
 interface TestimonialItemProps {
     testimonial: ITestimonial;

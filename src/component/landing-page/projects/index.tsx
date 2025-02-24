@@ -1,4 +1,4 @@
-import ProjectItem from './ProjectItem';
+import ProjectItem from './project-item';
 import helio from '@svg/HelioIMS.svg';
 import hanan from '@svg/Hanan.svg';
 import task from '@svg/Tasks.svg';
@@ -9,7 +9,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 import style from './style.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
-import InternationalizedBold from '@/component/flickering-bold/InternationalizedBold.tsx';
+import InternationalizedBold from '@/component/flickering-bold/internationalized-bold';
 
 const Projects = () => {
     const intl = useIntl();

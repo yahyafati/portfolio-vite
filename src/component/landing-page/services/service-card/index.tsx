@@ -4,7 +4,7 @@ import { FaPaintBrush } from 'react-icons/fa';
 
 import style from './style.module.scss';
 import classNames from 'classnames';
-import FlickeringBold from '../../flickering-bold';
+import FlickeringBold from '@/component/flickering-bold';
 
 const servicesMap = {
     // card-icon mobile
@@ -23,6 +23,7 @@ interface ServiceCardProps {
     body: string;
     detail: string;
     className?: string;
+    screen?: 'big-only' | 'unless-big';
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -31,9 +32,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     body,
     detail,
     className,
+    screen,
 }) => {
     return (
-        <div className={style.card}>
+        <div
+            className={classNames(style.card, {
+                [style.hideOnSmallScreen]: screen === 'big-only',
+                [style.hideOnWideScreen]: screen === 'unless-big',
+            })}
+        >
             <div className={classNames(style.frontside, className)}>
                 {servicesMap[type]}
                 <h3>{title}</h3>

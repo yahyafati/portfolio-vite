@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { messages } from './i18n.ts';
+import ContactPage from '@/pages/contact-page';
+import './style/app/App.scss';
+
+import { IntlProvider } from 'react-intl';
+import { useLocale } from '@/hooks/locale.ts';
+import LanguageToast from '@/component/language-toast';
+import ShinyPage from '@/component/shine-component/shiny-page';
+import LandingPage from '@/pages/landing-page';
 
 const shinyPageDisabled =
     import.meta.env.VITE_REACT_APP_DISABLE_SHINY_PAGE === 'true';
@@ -29,14 +37,5 @@ const App = () => {
         </IntlProvider>
     );
 };
-
-import ContactPage from './component/contact/ContactPage';
-import './style/app/App.scss';
-
-import { IntlProvider } from 'react-intl';
-import { useLocale } from '@/hooks/locale.ts';
-import LanguageToast from '@/component/language-toast';
-import ShinyPage from '@/component/shine-component/shiny-page';
-import LandingPage from '@/pages/landing-page';
 
 export default App;

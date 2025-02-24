@@ -1,5 +1,5 @@
 import React from 'react';
-import OriginalFlickeringBold from './index';
+import OriginalFlickeringBold from '@/component/flickering-bold';
 
 interface FlickeringBoldProps {
     text: string;

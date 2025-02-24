@@ -16,21 +16,6 @@
         font-weight: $font-weight-light;
     }
 
-    .icons {
-        display: flex;
-        gap: 1rem;
-
-        .icon {
-            cursor: pointer;
-            width: 2rem;
-            height: 2rem;
-            transition: none;
-
-            &:active {
-                color: $lighter-background-color;
-            }
-        }
-    }
 
     .credit {
         font-weight: $font-weight-light;
@@ -41,16 +26,7 @@
         .name {
             font-size: 1rem;
         }
-
-        .icons {
-            gap: 0.5rem;
-
-            .icon {
-                width: 1rem;
-                height: 1rem;
-            }
-        }
-
+        
         .credit {
             font-size: 0.75rem;
         }

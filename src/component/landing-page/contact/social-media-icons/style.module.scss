@@ -1,0 +1,28 @@
+@import "@/style/variables";
+
+.icons {
+    display: flex;
+    gap: 1rem;
+
+    .icon {
+        cursor: pointer;
+        width: 2rem;
+        height: 2rem;
+        transition: none;
+
+        &:active {
+            color: $lighter-background-color;
+        }
+    }
+}
+
+@media screen and (width <= 320px) {
+    .icons {
+        gap: 0.5rem;
+
+        .icon {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+}

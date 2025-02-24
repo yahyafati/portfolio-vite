@@ -1,4 +1,4 @@
-import SocialMediaIcons from './SocialMediaIcons';
+import SocialMediaIcons from './social-media-icons';
 
 import style from './style.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';

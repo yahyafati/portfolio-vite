@@ -1,4 +1,4 @@
-import ContactForm from './ContactForm';
+import ContactForm from '@/component/contact/contact-form';
 import ContactSVG from '@svg/Contact.svg?react';
 
 import style from './style.module.scss';

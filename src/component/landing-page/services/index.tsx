@@ -1,9 +1,9 @@
 import hereAreServices from '@svg/Services.svg';
 
-import ServiceCard from './ServiceCard';
+import ServiceCard from './service-card';
 
 import style from './style.module.scss';
-import FlickeringBold from '../../flickering-bold/InternationalizedBold.tsx';
+import FlickeringBold from '../../flickering-bold/internationalized-bold';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 const Services = () => {
@@ -16,7 +16,7 @@ const Services = () => {
                     values={{
                         services: (
                             <FlickeringBold
-                                text="Services"
+                                text="Index"
                                 className={style.strong}
                                 delay={100}
                             />
@@ -38,6 +38,7 @@ const Services = () => {
                             detail={intlFmt({
                                 id: 'landing.service.services.design.details',
                             })}
+                            screen={'unless-big'}
                             className={style.notBigScreen}
                         />
                         <ServiceCard
@@ -76,6 +77,7 @@ const Services = () => {
                         detail={intlFmt({
                             id: 'landing.service.services.design.details',
                         })}
+                        screen={'big-only'}
                         className={style.bigScreen}
                     />
                 </div>

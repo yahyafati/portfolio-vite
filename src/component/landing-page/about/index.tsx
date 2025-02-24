@@ -1,7 +1,7 @@
 import HiFromDev from '@svg/About.svg?react';
 import style from './style.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
-import FlickeringBold from '@/component/flickering-bold/InternationalizedBold.tsx';
+import FlickeringBold from '@/component/flickering-bold/internationalized-bold';
 
 const About = () => {
     const { formatMessage: intlFmt } = useIntl();
