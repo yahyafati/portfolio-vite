@@ -1,4 +1,4 @@
-@import '@styles/variables.scss';
+@import '@styles/variables';
 
 .shallWeSection {
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: center;
     padding: 3rem 0;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (width <= 320px) {
         padding: 3rem 0.5rem;
     }
 
@@ -15,7 +15,7 @@
         width: 10%;
         height: 1px;
 
-        @media screen and (max-width: 320px) {
+        @media screen and (width <= 320px) {
             display: none;
         }
     }
@@ -52,7 +52,7 @@
             }
         }
 
-        @media screen and (max-width: 640px) {
+        @media screen and (width <= 640px) {
             padding: 0.75rem 1.5rem;
 
             .shallWe {
@@ -65,7 +65,7 @@
             }
         }
 
-        @media screen and (max-width: 320px) {
+        @media screen and (width <= 320px) {
             padding: 0.5rem 1rem;
 
             .shallWe {

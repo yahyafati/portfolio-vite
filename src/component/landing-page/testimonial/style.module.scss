@@ -1,11 +1,11 @@
-@import '@styles/variables.scss';
+@import '@styles/variables';
 
 .testimonialSection {
     display: flex;
     flex-direction: column;
     padding: 3rem 1rem;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (width <= 320px) {
         padding: 5rem 0.5rem;
     }
 
@@ -19,13 +19,14 @@
             color: $primary-color;
         }
 
-        @media screen and (max-width: 320px) {
+        @media screen and (width <= 320px) {
             font-size: 1.5rem;
         }
     }
 
     .testimonials {
         user-select: none;
+
         // display: flex;
         // justify-content: center;
         // align-items: center;
@@ -68,13 +69,14 @@
                 }
             }
 
-            @media screen and (max-width: 640px) {
+            @media screen and (width <= 640px) {
                 flex-grow: 1;
             }
 
-            @media screen and (max-width: 320px) {
+            @media screen and (width <= 320px) {
                 flex-grow: 1;
                 margin: 0 0.25rem;
+
                 .profileImg {
                     width: 4rem;
                 }

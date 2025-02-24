@@ -1,23 +1,6 @@
-@import '@styles/variables.scss';
-@import '@styles/animations.scss';
+@import '@styles/variables';
+@import '@styles/animations';
 
-.aboutSectionWrapper {
-    background: linear-gradient(
-        180deg,
-        $lighter-background-color 0%,
-        $background-color 100%
-    );
-
-    &.inView {
-        .imgContainer {
-            animation: slideLeft 1s ease-out;
-        }
-
-        .aboutText {
-            animation: slideRight 1s ease-out;
-        }
-    }
-}
 
 .aboutSection {
     display: flex;
@@ -26,76 +9,95 @@
     padding: 6rem 3rem;
     border-radius: 0 0 100px 100px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (width <= 768px) {
         padding: 5rem 2rem;
         flex-direction: column;
         justify-content: center;
         gap: 2rem;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (width <= 320px) {
         padding: 5rem 1rem;
         flex-direction: column;
         justify-content: center;
     }
+}
 
-    .imgContainer {
-        text-align: center;
-        min-width: 50%;
+.aboutSection .imgContainer {
+    text-align: center;
+    min-width: 50%;
 
-        .aboutImg {
-            width: 80%;
+    .aboutImg {
+        width: 80%;
 
-            :global(#arm) {
-                position: relative;
-                display: inline-block;
-                animation: wave_arms 1s infinite;
-            }
-        }
-    }
-
-    .aboutText {
-        text-align: center;
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: $font-weight-medium;
-
-            .love {
-                font-weight: $font-weight-bold;
-                color: pink;
-            }
-
-            .code {
-                font-weight: $font-weight-bold;
-            }
-
-            @media screen and (max-width: 320px) {
-                font-size: 1.5rem;
-            }
-        }
-
-        p.about {
-            font-weight: $font-weight-light;
-            font-size: 1.2rem;
-
-            .passionate {
-                color: $primary-color;
-                font-weight: $font-weight-bold;
-            }
-
-            @media screen and (max-width: 320px) {
-                font-size: 0.85rem;
-            }
+        :global(#arm) {
+            position: relative;
+            display: inline-block;
+            animation: wave-arms 1s infinite;
         }
     }
 }
 
-@keyframes wave_arms {
+.aboutSection .aboutText {
+    text-align: center;
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: $font-weight-medium;
+
+        .love {
+            font-weight: $font-weight-bold;
+            color: pink;
+        }
+
+        .code {
+            font-weight: $font-weight-bold;
+        }
+
+        @media screen and (width <= 320px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    p.about {
+        font-weight: $font-weight-light;
+        font-size: 1.2rem;
+
+        .passionate {
+            color: $primary-color;
+            font-weight: $font-weight-bold;
+        }
+
+        @media screen and (width <= 320px) {
+            font-size: 0.85rem;
+        }
+    }
+}
+
+.aboutSectionWrapper {
+    background: linear-gradient(
+                    180deg,
+                    $lighter-background-color 0%,
+                    $background-color 100%
+    );
+
+    &.inView {
+        .imgContainer {
+            animation: slide-left 1s ease-out;
+        }
+
+        .aboutText {
+            animation: slide-right 1s ease-out;
+        }
+    }
+}
+
+@keyframes wave-arms {
     0% {
         transform: rotate(0deg) translate(0, 0);
     }
+
     100% {
-        transform: rotate(-10deg) translate(-50px, -0px);
+        transform: rotate(-10deg) translate(-50px, -0);
     }
 }

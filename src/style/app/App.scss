@@ -1,4 +1,4 @@
-@import '@styles/variables.scss';
+@import '@styles/variables';
 
 body {
     background-color: $background-color;
@@ -12,7 +12,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
 }
 
 ::-webkit-scrollbar-thumb {

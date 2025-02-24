@@ -1,10 +1,9 @@
-@import '@styles/variables.scss';
+@import '@styles/variables';
 
 .hamburger {
     display: flex;
     cursor: pointer;
     color: $primary-color;
-
     justify-content: flex-end;
 
     .hamContainer {
@@ -13,10 +12,9 @@
         color: $primary-color;
         width: 2rem;
         height: 2rem;
-
         flex-direction: column;
-        justify-content: space-around;
-        align-content: center;
+        place-content: center space-around;
+
         // transition: all 1s;
 
         .line {
@@ -27,17 +25,17 @@
         &.open {
             .line1 {
                 // animation: name duration timing-function delay iteration-count direction fill-mode;
-                animation: turn_back 0.5s ease-in-out;
+                animation: turn-back 0.5s ease-in-out;
                 animation-fill-mode: forwards;
             }
 
             .line2 {
-                animation: come_back 0.5s ease-in-out;
+                animation: come-back 0.5s ease-in-out;
                 animation-fill-mode: forwards;
             }
 
             .line3 {
-                animation: turn_back_up 0.5s ease-in-out;
+                animation: turn-back-up 0.5s ease-in-out;
                 animation-fill-mode: forwards;
             }
         }
@@ -50,12 +48,12 @@
                 }
 
                 &.line2 {
-                    animation: goaway 0.5s ease-in-out 0.4s;
+                    animation: go-away 0.5s ease-in-out 0.4s;
                     animation-fill-mode: forwards;
                 }
 
                 &.line3 {
-                    animation: turnDown 0.5s ease-in-out;
+                    animation: turn-down 0.5s ease-in-out;
                     animation-fill-mode: forwards;
                 }
             }
@@ -73,18 +71,19 @@
     }
 }
 
-@keyframes turn_back {
+@keyframes turn-back {
     0% {
         transform: translate(0%, 10px) rotateZ(45deg) scale(1);
     }
 
     100% {
         transform: translateX(0%);
+
         // transform: translate(0%, 10px) rotateZ(45deg) scale(1);
     }
 }
 
-@keyframes goaway {
+@keyframes go-away {
     0% {
         transform: translateX(0%);
         opacity: 1;
@@ -100,7 +99,7 @@
     }
 }
 
-@keyframes come_back {
+@keyframes come-back {
     0% {
         transform: translateX(100%);
         opacity: 0;
@@ -116,7 +115,7 @@
     }
 }
 
-@keyframes turnDown {
+@keyframes turn-down {
     0% {
         transform: translateX(0%);
     }
@@ -126,7 +125,7 @@
     }
 }
 
-@keyframes turn_back_up {
+@keyframes turn-back-up {
     0% {
         transform: translate(0%, -10px) rotateZ(-45deg) scale(1);
     }

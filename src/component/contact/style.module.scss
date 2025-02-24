@@ -1,20 +1,20 @@
-@import '@styles/variables.scss';
+@import '@styles/variables';
 
 .contactPage {
     padding: 3rem;
     display: flex;
     gap: 1rem;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (width <= 768px) {
         padding: 2rem;
     }
 
-    @media screen and (max-width: 640px) {
+    @media screen and (width <= 640px) {
         flex-direction: column;
         padding: 1.5rem;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (width <= 320px) {
         padding: 1rem;
     }
 
@@ -22,7 +22,7 @@
         margin: auto;
         width: 40%;
 
-        @media screen and (max-width: 640px) {
+        @media screen and (width <= 640px) {
             width: 80%;
         }
     }
@@ -50,6 +50,10 @@
             gap: 1rem;
             width: 100%;
 
+            textarea {
+                height: 5rem;
+            }
+
             input,
             textarea {
                 outline: none;
@@ -71,9 +75,6 @@
                 }
             }
 
-            textarea {
-                height: 5rem;
-            }
 
             button {
                 cursor: pointer;
@@ -96,10 +97,8 @@
             }
         }
 
-        @media screen and (max-width: 768px) {
-        }
 
-        @media screen and (max-width: 640px) {
+        @media screen and (width <= 640px) {
             .formWelcome {
                 font-size: 2.5rem;
             }
@@ -118,7 +117,7 @@
             }
         }
 
-        @media screen and (max-width: 320px) {
+        @media screen and (width <= 320px) {
             .formWelcome {
                 font-size: 2rem;
             }

@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import 'variables';
 
 $lighter-bg-color: lighten($lighter-background-color, 20%);
 
@@ -6,74 +6,70 @@ $lighter-bg-color: lighten($lighter-background-color, 20%);
     0% {
         box-shadow: 0 0 0.5rem $lighter-bg-color;
     }
+
     50% {
         box-shadow: 0 0 0.75rem $lighter-bg-color;
     }
+
     100% {
         box-shadow: 0 0 0.5rem $lighter-bg-color;
     }
 }
 
-@keyframes text_glow {
-    0% {
-        text-shadow: 0 0 10px $primary-color;
-    }
-    50% {
-        text-shadow: 0 0 20px $primary-color;
-    }
-    100% {
-        text-shadow: 0 0 10px $primary-color;
-    }
-}
 
-@keyframes slideLeft {
+@keyframes slide-left {
     from {
         transform: translateX(100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
-@keyframes slideRight {
+@keyframes slide-right {
     from {
         transform: translateX(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
-@keyframes slideUp {
+@keyframes slide-up {
     from {
         transform: translateY(100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
     }
 }
 
-@keyframes slideDown {
+@keyframes slide-down {
     from {
         transform: translateY(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
     }
 }
 
-@keyframes fadeOut {
+@keyframes fade-out {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
