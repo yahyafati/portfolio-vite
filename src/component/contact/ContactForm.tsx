@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
-import ReCAPTCHA from "react-google-recaptcha"
+import ReCAPTCHA from 'react-google-recaptcha';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 const SITE_KEY = import.meta.env.VITE_REACT_APP_RECAPTCHA_SITE_KEY;
@@ -9,7 +9,7 @@ const ContactForm = () => {
     const captchaRef = React.useRef<ReCAPTCHA>(null);
     const { formatMessage } = useIntl();
 
-     const handleFormSubmit: React.FormEventHandler = async (e) => {
+    const handleFormSubmit: React.FormEventHandler = async (e) => {
         e.preventDefault();
         const apiGateway = import.meta.env.VITE_REACT_APP_API_GATEWAY_ENDPOINT;
         const token = captchaRef.current?.getValue();
@@ -26,7 +26,7 @@ const ContactForm = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ ...data, }),
+            body: JSON.stringify({ ...data }),
         });
 
         if (response.ok) {

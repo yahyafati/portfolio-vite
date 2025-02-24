@@ -1,108 +1,108 @@
-@import "@styles/variables.scss";
+@import '@styles/variables.scss';
 
 .projectSection {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
 
-  @media screen and (max-width: 768px) {
-    padding: 5rem 1rem;
-  }
-
-  @media screen and (max-width: 320px) {
-    padding: 5rem 0.25rem;
-  }
-
-  h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: $font-weight-medium;
-    padding-bottom: 2rem;
-
-    strong {
-      color: $primary-color;
+    @media screen and (max-width: 768px) {
+        padding: 5rem 1rem;
     }
 
     @media screen and (max-width: 320px) {
-      font-size: 1.25rem;
-    }
-  }
-
-  .projectList {
-    overflow-x: auto;
-    padding: 1rem;
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background-color: white;
-      outline: none;
+        padding: 5rem 0.25rem;
     }
 
-    &::-webkit-scrollbar-thumb:active {
-      background-color: white;
-    }
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: $font-weight-medium;
+        padding-bottom: 2rem;
 
-    .projectItemContainer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .projectItem {
-      background-color: $card-background;
-      border-radius: 5px;
-      background-color: $card-background;
-      padding: 1.5rem 1rem;
-      width: 70%;
-      text-align: center;
-      cursor: grab;
-
-      .projectIcon {
-        height: 10rem;
-        width: 15rem;
-      }
-
-      .titleContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.25rem;
-
-        .title {
-          font-weight: $font-weight-regular;
-          font-size: 1.5rem;
-        }
-
-        .gitIcon {
-          display: flex;
-          font-size: 1.5rem;
-
-          &:hover {
+        strong {
             color: $primary-color;
-          }
-        }
-      }
-
-      @media screen and (max-width: 640px) {
-        flex-grow: 1;
-      }
-
-      @media screen and (max-width: 320px) {
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-
-        .projectIcon {
-          height: 5rem;
-          width: 10rem;
         }
 
-        .title {
-          font-size: 1rem;
-          font-weight: $font-weight-light;
+        @media screen and (max-width: 320px) {
+            font-size: 1.25rem;
         }
-      }
     }
-  }
+
+    .projectList {
+        overflow-x: auto;
+        padding: 1rem;
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: white;
+            outline: none;
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            background-color: white;
+        }
+
+        .projectItemContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .projectItem {
+            background-color: $card-background;
+            border-radius: 5px;
+            background-color: $card-background;
+            padding: 1.5rem 1rem;
+            width: 70%;
+            text-align: center;
+            cursor: grab;
+
+            .projectIcon {
+                height: 10rem;
+                width: 15rem;
+            }
+
+            .titleContainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.25rem;
+
+                .title {
+                    font-weight: $font-weight-regular;
+                    font-size: 1.5rem;
+                }
+
+                .gitIcon {
+                    display: flex;
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 640px) {
+                flex-grow: 1;
+            }
+
+            @media screen and (max-width: 320px) {
+                flex-grow: 1;
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+
+                .projectIcon {
+                    height: 5rem;
+                    width: 10rem;
+                }
+
+                .title {
+                    font-size: 1rem;
+                    font-weight: $font-weight-light;
+                }
+            }
+        }
+    }
 }

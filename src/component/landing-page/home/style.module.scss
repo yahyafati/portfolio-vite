@@ -1,174 +1,170 @@
-@import "@styles/variables.scss";
+@import '@styles/variables.scss';
 
 .button {
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 
-  &:active {
-    transform: scale(0.9);
-  }
+    &:active {
+        transform: scale(0.9);
+    }
 
-  &.primary {
-    font-weight: $font-weight-medium;
-    background-color: $primary-color;
-    color: $background-color;
-  }
+    &.primary {
+        font-weight: $font-weight-medium;
+        background-color: $primary-color;
+        color: $background-color;
+    }
 }
 
 .homeSection {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
-
-  background: linear-gradient(
-                  180deg,
-                  $background-color 0%,
-                  $lighter-background-color 100%
-  );
-
-  .introText {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    z-index: $introTextZIndex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
 
-    .hiContainer {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      font-size: 2rem;
+    background: linear-gradient(
+        180deg,
+        $background-color 0%,
+        $lighter-background-color 100%
+    );
 
-      .name {
-        width: min-content;
-        color: $primary-color;
-        font-weight: $font-weight-bold;
-        font-size: 7rem;
-      }
-    }
+    .introText {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        z-index: $introTextZIndex;
 
+        .hiContainer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 2rem;
 
-    .work {
-      position: relative;
-
-      font-family: "Source Code Pro", monospace;
-      font-weight: $font-weight-medium;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      width: fit-content;
-      border-right: 5px solid $primary-color;
-      animation: blink .75s ease infinite;
-    }
-
-    .buttons {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      .hiContainer {
-        font-size: 1.5rem;
-
-        .name {
-          font-size: 5rem;
+            .name {
+                width: min-content;
+                color: $primary-color;
+                font-weight: $font-weight-bold;
+                font-size: 7rem;
+            }
         }
-      }
 
+        .work {
+            position: relative;
 
-      .work {
-        font-size: 1.2rem;
-        font-weight: $font-weight-light;
-      }
-    }
-
-    @media screen and (max-width: 640px) and (min-width: 481px) {
-      width: 180px;
-
-      .hiContainer {
-        font-size: 1rem;
-
-        .name {
-          font-size: 3rem;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: $font-weight-medium;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            width: fit-content;
+            border-right: 5px solid $primary-color;
+            animation: blink 0.75s ease infinite;
         }
-      }
 
-
-      .work {
-        font-size: 1rem;
-      }
-
-      .buttons {
-        .button {
-          font-size: 0.6rem;
-          padding: 0.2rem 0.5rem;
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-      }
-    }
 
-    @media screen and (max-width: 320px) {
-      .hiContainer {
-        .name {
-          font-size: 3.5rem;
+        @media screen and (max-width: 768px) {
+            .hiContainer {
+                font-size: 1.5rem;
+
+                .name {
+                    font-size: 5rem;
+                }
+            }
+
+            .work {
+                font-size: 1.2rem;
+                font-weight: $font-weight-light;
+            }
         }
-      }
 
+        @media screen and (max-width: 640px) and (min-width: 481px) {
+            width: 180px;
 
-      .work {
-        font-weight: $font-weight-light;
-        font-size: 0.8rem;
-      }
+            .hiContainer {
+                font-size: 1rem;
 
-      .buttons {
-        .button {
-          font-size: 0.5rem;
-          padding: 0.25rem 0.5rem;
+                .name {
+                    font-size: 3rem;
+                }
+            }
+
+            .work {
+                font-size: 1rem;
+            }
+
+            .buttons {
+                .button {
+                    font-size: 0.6rem;
+                    padding: 0.2rem 0.5rem;
+                }
+            }
         }
-      }
-    }
-  }
 
-  .introImg {
-    width: 50%;
+        @media screen and (max-width: 320px) {
+            .hiContainer {
+                .name {
+                    font-size: 3.5rem;
+                }
+            }
 
-    :global(#person) {
-      animation: float_up 2s infinite alternate linear;
-      display: block;
+            .work {
+                font-weight: $font-weight-light;
+                font-size: 0.8rem;
+            }
+
+            .buttons {
+                .button {
+                    font-size: 0.5rem;
+                    padding: 0.25rem 0.5rem;
+                }
+            }
+        }
     }
 
-    @media screen and (max-width: 480px) {
-      display: none;
-    }
+    .introImg {
+        width: 50%;
 
-    @media screen and (max-width: 640px) and (min-width: 321px) {
-      width: 35%;
+        :global(#person) {
+            animation: float_up 2s infinite alternate linear;
+            display: block;
+        }
+
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
+
+        @media screen and (max-width: 640px) and (min-width: 321px) {
+            width: 35%;
+        }
     }
-  }
 }
 
 @keyframes float_up {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-1rem);
-  }
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-1rem);
+    }
 }
 
 @keyframes blink {
-  to {
-    border-color: #00ff2900;
-  }
+    to {
+        border-color: #00ff2900;
+    }
 }
 
 @keyframes blink {
-  from {
-    border-right-color: $primary-color;
-  }
-  to {
-    border-right-color: transparent;
-  }
+    from {
+        border-right-color: $primary-color;
+    }
+    to {
+        border-right-color: transparent;
+    }
 }

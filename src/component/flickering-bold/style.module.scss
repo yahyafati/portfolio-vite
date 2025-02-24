@@ -1,46 +1,45 @@
-@import "@styles/variables.scss";
-@import "@styles/animations.scss";
+@import '@styles/variables.scss';
+@import '@styles/animations.scss';
 
 $primary-color-transparent: rgba($primary-color, 0.5);
 
-
 .flickeringBold {
-  user-select: none;
+    user-select: none;
 
-  .word {
-    display: inline-block;
-    padding-right: 0.5rem;
+    .word {
+        display: inline-block;
+        padding-right: 0.5rem;
 
+        .flickeringChar {
+            animation: bold 15s infinite linear alternate;
 
-    .flickeringChar {
-      animation: bold 15s infinite linear alternate;
-
-      &.underline {
-        animation: bold 15s infinite linear alternate, underline 15s infinite linear alternate;
-      }
+            &.underline {
+                animation:
+                    bold 15s infinite linear alternate,
+                    underline 15s infinite linear alternate;
+            }
+        }
     }
-  }
 }
 
-
 @keyframes bold {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes underline {
-  0% {
-  }
-  50% {
-    border-bottom: 1px solid $primary-color;
-  }
-  100% {
-    border-bottom: .5px solid transparent;
-  }
+    0% {
+    }
+    50% {
+        border-bottom: 1px solid $primary-color;
+    }
+    100% {
+        border-bottom: 0.5px solid transparent;
+    }
 }

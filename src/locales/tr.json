@@ -1,98 +1,98 @@
 {
-  "firstName": "Yahya",
-  "lastName": "Haji",
-  "navigation": {
-    "home": "Anasayfa",
-    "services": "Hizmetler",
-    "projects": "Projeler",
-    "testimonials": "Referanslar"
-  },
-  "landing": {
-    "home": {
-      "heroText": "Merhaba, Ben {name}",
-      "titles": {
-        "title1": "Full Stack Yazılımcı",
-        "title2": "React Yazılımcı",
-        "title3": "Java Yazılımcı",
-        "title4": "Freelancer"
-      },
-      "contactMe": "İletişime Geç",
-      "getResume": "CV'yi İndir"
+    "firstName": "Yahya",
+    "lastName": "Haji",
+    "navigation": {
+        "home": "Anasayfa",
+        "services": "Hizmetler",
+        "projects": "Projeler",
+        "testimonials": "Referanslar"
     },
-    "about": {
-      "title": {
-        "base": "Ne diyebilirim ki? Sadece {code} {love}.",
-        "love": "seviyorum",
-        "code": "kodlamayı"
-      },
-      "body": {
-        "base": "Merhaba, ben Yahya. Yenilikçi yazılım çözümleri yaratmayı seven {enthusiastic} biriyim. Full Stack Web Developer ve Android Developer olarak uzmanlığımla, çok çeşitli teknolojilerde çalıştım. Dinamik web uygulamaları oluşturmak veya sezgisel mobil deneyimler tasarlamak olsun, teknolojide mümkün olanın sınırlarını zorlamak ve yeni zorluklarla mücadele etmek için her zaman istekliyim.",
-        "enthusiastic": "hevesli"
-      }
-    },
-    "service": {
-      "title": {
-        "base": "İşte sunduğum bazı {services}",
-        "services": "Hizmetler"
-      },
-      "services": {
-        "mobile": {
-          "title": "Mobil Geliştirme",
-          "body": "Son derece etkileşimli ve sezgisel mobil uygulamalar oluşturun",
-          "details": "Hem iOS hem de Android için uygulama oluşturma konusunda deneyime sahip bir mobil uygulama geliştiricisiyim. Kullanıcıları etkileyecek ve işinize değer katacak bir uygulama oluşturmanıza yardımcı olabilirim."
+    "landing": {
+        "home": {
+            "heroText": "Merhaba, Ben {name}",
+            "titles": {
+                "title1": "Full Stack Yazılımcı",
+                "title2": "React Yazılımcı",
+                "title3": "Java Yazılımcı",
+                "title4": "Freelancer"
+            },
+            "contactMe": "İletişime Geç",
+            "getResume": "CV'yi İndir"
         },
-        "web": {
-          "title": "Web Geliştirme",
-          "body": "Sıfırdan Güçlü, Güvenilir, Güvenli ve Ölçeklenebilir Web Siteleri Geliştirin",
-          "details": "Çeşitli müşteriler için web sitesi oluşturma konusunda deneyime sahip bir web geliştiricisiyim. Kullanıcıları çekecek ve iş hedeflerinize ulaşmanıza yardımcı olacak bir web sitesi oluşturmanıza yardımcı olabilirim."
+        "about": {
+            "title": {
+                "base": "Ne diyebilirim ki? Sadece {code} {love}.",
+                "love": "seviyorum",
+                "code": "kodlamayı"
+            },
+            "body": {
+                "base": "Merhaba, ben Yahya. Yenilikçi yazılım çözümleri yaratmayı seven {enthusiastic} biriyim. Full Stack Web Developer ve Android Developer olarak uzmanlığımla, çok çeşitli teknolojilerde çalıştım. Dinamik web uygulamaları oluşturmak veya sezgisel mobil deneyimler tasarlamak olsun, teknolojide mümkün olanın sınırlarını zorlamak ve yeni zorluklarla mücadele etmek için her zaman istekliyim.",
+                "enthusiastic": "hevesli"
+            }
         },
-        "design": {
-          "title": "UI/UX Tasarım",
-          "body": "Kullanıcı deneyimine inanılmaz detaylarla tatlı bir UI tasarımı",
-          "details": "Güzel ve sezgisel tasarımlar yaratma tutkusuna sahip bir UI/UX tasarımcısıyım. Web siteleri, mobil uygulamalar ve diğer dijital ürünler tasarlama konusunda deneyimim var. Ürününüzün öne çıkmasını ve kullanıcıları çekmesini sağlayacak bir tasarım oluşturmanıza yardımcı olabilirim."
+        "service": {
+            "title": {
+                "base": "İşte sunduğum bazı {services}",
+                "services": "Hizmetler"
+            },
+            "services": {
+                "mobile": {
+                    "title": "Mobil Geliştirme",
+                    "body": "Son derece etkileşimli ve sezgisel mobil uygulamalar oluşturun",
+                    "details": "Hem iOS hem de Android için uygulama oluşturma konusunda deneyime sahip bir mobil uygulama geliştiricisiyim. Kullanıcıları etkileyecek ve işinize değer katacak bir uygulama oluşturmanıza yardımcı olabilirim."
+                },
+                "web": {
+                    "title": "Web Geliştirme",
+                    "body": "Sıfırdan Güçlü, Güvenilir, Güvenli ve Ölçeklenebilir Web Siteleri Geliştirin",
+                    "details": "Çeşitli müşteriler için web sitesi oluşturma konusunda deneyime sahip bir web geliştiricisiyim. Kullanıcıları çekecek ve iş hedeflerinize ulaşmanıza yardımcı olacak bir web sitesi oluşturmanıza yardımcı olabilirim."
+                },
+                "design": {
+                    "title": "UI/UX Tasarım",
+                    "body": "Kullanıcı deneyimine inanılmaz detaylarla tatlı bir UI tasarımı",
+                    "details": "Güzel ve sezgisel tasarımlar yaratma tutkusuna sahip bir UI/UX tasarımcısıyım. Web siteleri, mobil uygulamalar ve diğer dijital ürünler tasarlama konusunda deneyimim var. Ürününüzün öne çıkmasını ve kullanıcıları çekmesini sağlayacak bir tasarım oluşturmanıza yardımcı olabilirim."
+                }
+            }
+        },
+        "projects": {
+            "title": {
+                "base": "Önceki {projects}imi görmek istiyorsunuz",
+                "projects": "Projeler"
+            }
+        },
+        "testimonials": {
+            "title": {
+                "base": "Müşterilerimin {kindWords}",
+                "kindWords": "nazik sözleri"
+            }
+        },
+        "shallWe": {
+            "title": "Birlikte çalışalım mı?",
+            "button": "Başlayalım!"
+        },
+        "footer": {
+            "credit": "Tasarlayan ve Geliştiren {designer}"
         }
-      }
     },
-    "projects": {
-      "title": {
-        "base": "Önceki {projects}imi görmek istiyorsunuz",
-        "projects": "Projeler"
-      }
+    "contact": {
+        "hireMe": "Beni İşe Al",
+        "hi": "Merhaba!",
+        "form": {
+            "fullName": "Ad Soyad",
+            "email": "E-posta",
+            "phone": "Telefon",
+            "optional": "İsteğe Bağlı",
+            "body": "Size nasıl yardımcı olabilirim?",
+            "send": "Gönder"
+        }
     },
-    "testimonials": {
-      "title": {
-        "base": "Müşterilerimin {kindWords}",
-        "kindWords": "nazik sözleri"
-      }
-    },
-    "shallWe": {
-      "title": "Birlikte çalışalım mı?",
-      "button": "Başlayalım!"
-    },
-    "footer": {
-      "credit": "Tasarlayan ve Geliştiren {designer}"
+    "langToast": {
+        "select": {
+            "title": "Dil Seç",
+            "description": "Bu web sitesi çoklu dillerde mevcuttur."
+        },
+        "selected": {
+            "title": "Dil Seçildi",
+            "description": "{language} dili seçildi."
+        }
     }
-  },
-  "contact": {
-    "hireMe": "Beni İşe Al",
-    "hi": "Merhaba!",
-    "form": {
-      "fullName": "Ad Soyad",
-      "email": "E-posta",
-      "phone": "Telefon",
-      "optional": "İsteğe Bağlı",
-      "body": "Size nasıl yardımcı olabilirim?",
-      "send": "Gönder"
-    }
-  },
-  "langToast": {
-    "select": {
-      "title": "Dil Seç",
-      "description": "Bu web sitesi çoklu dillerde mevcuttur."
-    },
-    "selected": {
-      "title": "Dil Seçildi",
-      "description": "{language} dili seçildi."
-    }
-  }
 }

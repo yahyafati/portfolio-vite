@@ -1,140 +1,140 @@
-@import "@styles/variables.scss";
-
+@import '@styles/variables.scss';
 
 .contactPage {
-  padding: 3rem;
-  display: flex;
-  gap: 1rem;
-
-
-  @media screen and (max-width: 768px) {
-    padding: 2rem;
-  }
-
-  @media screen and (max-width: 640px) {
-    flex-direction: column;
-    padding: 1.5rem;
-  }
-
-  @media screen and (max-width: 320px) {
-    padding: 1rem;
-  }
-
-  .contactImg {
-    margin: auto;
-    width: 40%;
-
-    @media screen and (max-width: 640px) {
-      width: 80%;
-    }
-  }
-
-  .contactFormContainer {
+    padding: 3rem;
     display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    .formWelcome {
-      font-size: 3rem;
-      font-weight: $font-weight-light;
-      margin-bottom: 2rem;
-
-      strong {
-        color: $primary-color;
-      }
-    }
-
-    .contactForm {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-
-      input, textarea {
-        outline: none;
-        padding: 1rem;
-        font-weight: $font-weight-medium;
-        background-color: transparent;
-        color: white;
-        border: none;
-        border-bottom: 1.5px solid white;
-        resize: vertical;
-
-        &::placeholder {
-          font-weight: $font-weight-light;
-          color: #aaa;
-        }
-
-        &:focus {
-          border-bottom: 2px solid $primary-color;
-        }
-      }
-
-      textarea {
-        height: 5rem;
-      }
-
-      button {
-        cursor: pointer;
-        outline: none;
-        border: none;
-        padding: 1rem;
-        font-weight: $font-weight-bold;
-        transition: all 0.25s;
-        font-size: 1rem;
-
-        &.submitButton {
-          background-color: $primary-color;
-          color: $background-color;
-        }
-
-        &:active {
-          border-radius: 3px;
-          transform: scale(.98);
-        }
-      }
-    }
+    gap: 1rem;
 
     @media screen and (max-width: 768px) {
-
+        padding: 2rem;
     }
 
     @media screen and (max-width: 640px) {
-      .formWelcome {
-        font-size: 2.5rem;
-      }
-
-      .contactForm {
-        gap: .5rem;
-
-        input, textarea {
-          padding: .75rem;
-        }
-
-        button {
-          padding: .75rem;
-        }
-      }
+        flex-direction: column;
+        padding: 1.5rem;
     }
 
     @media screen and (max-width: 320px) {
-      .formWelcome {
-        font-size: 2rem;
-      }
-
-      .contactForm {
-        gap: .5rem;
-
-        input, textarea {
-          padding: .75rem;
-        }
-
-        button {
-          padding: .75rem;
-        }
-      }
+        padding: 1rem;
     }
-  }
+
+    .contactImg {
+        margin: auto;
+        width: 40%;
+
+        @media screen and (max-width: 640px) {
+            width: 80%;
+        }
+    }
+
+    .contactFormContainer {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .formWelcome {
+            font-size: 3rem;
+            font-weight: $font-weight-light;
+            margin-bottom: 2rem;
+
+            strong {
+                color: $primary-color;
+            }
+        }
+
+        .contactForm {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+
+            input,
+            textarea {
+                outline: none;
+                padding: 1rem;
+                font-weight: $font-weight-medium;
+                background-color: transparent;
+                color: white;
+                border: none;
+                border-bottom: 1.5px solid white;
+                resize: vertical;
+
+                &::placeholder {
+                    font-weight: $font-weight-light;
+                    color: #aaa;
+                }
+
+                &:focus {
+                    border-bottom: 2px solid $primary-color;
+                }
+            }
+
+            textarea {
+                height: 5rem;
+            }
+
+            button {
+                cursor: pointer;
+                outline: none;
+                border: none;
+                padding: 1rem;
+                font-weight: $font-weight-bold;
+                transition: all 0.25s;
+                font-size: 1rem;
+
+                &.submitButton {
+                    background-color: $primary-color;
+                    color: $background-color;
+                }
+
+                &:active {
+                    border-radius: 3px;
+                    transform: scale(0.98);
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+        }
+
+        @media screen and (max-width: 640px) {
+            .formWelcome {
+                font-size: 2.5rem;
+            }
+
+            .contactForm {
+                gap: 0.5rem;
+
+                input,
+                textarea {
+                    padding: 0.75rem;
+                }
+
+                button {
+                    padding: 0.75rem;
+                }
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .formWelcome {
+                font-size: 2rem;
+            }
+
+            .contactForm {
+                gap: 0.5rem;
+
+                input,
+                textarea {
+                    padding: 0.75rem;
+                }
+
+                button {
+                    padding: 0.75rem;
+                }
+            }
+        }
+    }
 }
