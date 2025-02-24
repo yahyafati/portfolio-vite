@@ -6,16 +6,18 @@ import { FormattedMessage } from 'react-intl';
 const ShallWe = () => {
     return (
         <div id="shallWeSection" className={style.shallWeSection}>
-            <hr className={style.hLine} />
-            <Link to={'/contact'} className={style.textContainer}>
-                <h4 className={style.shallWe}>
-                    <FormattedMessage id="landing.shallWe.title" />
-                </h4>
-                <p className={style.letsGo}>
-                    <FormattedMessage id="landing.shallWe.button" />
-                </p>
-            </Link>
-            <hr className={style.hLine} />
+            <div className={style.content}>
+                <hr className={style.hLine} />
+                <div className={style.textContainer}>
+                    <h4 className={style.shallWe}>
+                        <FormattedMessage id="landing.shallWe.title" />
+                    </h4>
+                    <Link to={'/contact'} className={style.letsGo}>
+                        <FormattedMessage id="landing.shallWe.button" />
+                    </Link>
+                </div>
+                <hr className={style.hLine} />
+            </div>
         </div>
     );
 };

@@ -2,6 +2,8 @@
 @import '@styles/mixins';
 
 .servicesSection {
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     user-select: none;
     display: flex;
