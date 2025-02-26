@@ -75,7 +75,7 @@ const Testimonial: React.FC<TestimonialProps> = () => {
             </h2>
             <Carousel
                 className={style.testimonials}
-                autoPlay={true}
+                autoPlay={false}
                 infiniteLoop={true}
                 showStatus={false}
                 showArrows={false}
@@ -84,9 +84,7 @@ const Testimonial: React.FC<TestimonialProps> = () => {
                 emulateTouch={true}
             >
                 {SAMPLE_TESTIMONIALS.map((testimonial, index) => (
-                    <div key={index} className={style.testimonialContainer}>
-                        <TestimonialItem testimonial={testimonial} />
-                    </div>
+                    <TestimonialItem key={index} testimonial={testimonial} />
                 ))}
             </Carousel>
         </div>

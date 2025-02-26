@@ -7,6 +7,8 @@ import Testimonial from '@/component/landing-page/testimonial';
 import ShallWe from '@/component/landing-page/shallWe';
 import Contact from '@/component/landing-page/contact';
 
+import style from './style.module.scss';
+
 const DISABLE_TESTIMONIAL =
     import.meta.env.VITE_REACT_APP_DISABLE_TESTIMONIALS === 'true';
 
@@ -14,7 +16,7 @@ interface LandingPageProps {}
 
 const LandingPage: React.FC<LandingPageProps> = () => {
     return (
-        <div id="AppContainer">
+        <div id="AppContainer" className={style.page}>
             <Home />
             <About />
             <Services />

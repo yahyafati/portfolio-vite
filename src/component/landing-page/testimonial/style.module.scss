@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem 1rem;
+    padding: 3rem;
     height: 100vh;
 
     @media screen and (width <= 320px) {
@@ -16,7 +16,6 @@
         text-align: center;
         font-size: 2.5rem;
         font-weight: $font-weight-medium;
-        padding-bottom: 2rem;
 
         strong {
             color: $primary-color;
@@ -28,15 +27,9 @@
     }
 
     .testimonials {
+        overflow-x: auto;
         user-select: none;
-
-
-        .testimonialContainer {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-
+        padding: 1rem;
+        width: 100%;
     }
 }

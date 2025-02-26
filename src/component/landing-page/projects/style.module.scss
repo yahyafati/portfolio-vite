@@ -20,7 +20,6 @@
         text-align: center;
         font-size: 2.5rem;
         font-weight: $font-weight-medium;
-        padding-bottom: 2rem;
 
         strong {
             color: $primary-color;
@@ -34,6 +33,7 @@
     .projectList {
         overflow-x: auto;
         padding: 1rem;
+        width: 100%;
 
         &::-webkit-scrollbar-thumb {
             border-radius: 10px;

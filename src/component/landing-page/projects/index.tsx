@@ -31,7 +31,7 @@ const Projects = () => {
             {/* <div className="projectList"> */}
             <Carousel
                 className={style.projectList}
-                autoPlay={true}
+                autoPlay={false}
                 infiniteLoop={true}
                 showStatus={false}
                 showArrows={false}
