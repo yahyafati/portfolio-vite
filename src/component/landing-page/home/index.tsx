@@ -5,12 +5,15 @@ import style from './style.module.scss';
 import classNames from 'classnames';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { FaAngleDoubleDown } from 'react-icons/fa';
+import { useScrollY } from '@/hooks';
 
 const MY_TITLES_LENGTH = 4;
 const Home = () => {
     const { formatMessage: intlFmt } = useIntl();
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [currentLetterIndex, setCurrentLetterIndex] = useState(1);
+    const scrollY = useScrollY();
+    const HIDE_SCROLL_DOWN_BTN_Y_THRESHOLD = 30;
 
     const MY_TITLE_ALL = Array.from({ length: MY_TITLES_LENGTH }, (_, i) =>
         intlFmt({ id: `landing.home.titles.title${i + 1}`, defaultMessage: '' })
@@ -61,7 +64,12 @@ const Home = () => {
                 </button>
             </div>
 
-            <button className={style.scrollDownBtn}>
+            <button
+                className={classNames(style.scrollDownBtn, {
+                    [style.scrollDownBtnHidden]:
+                        scrollY > HIDE_SCROLL_DOWN_BTN_Y_THRESHOLD,
+                })}
+            >
                 Scroll Down <FaAngleDoubleDown />
             </button>
         </div>

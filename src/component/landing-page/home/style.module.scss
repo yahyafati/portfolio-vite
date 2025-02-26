@@ -83,6 +83,10 @@ button {
     }
 }
 
+.scrollDownBtn.scrollDownBtnHidden {
+    opacity: 0;
+}
+
 @include screen-under($breakpoint-lg) {
     .name {
         font-size: 6rem;
