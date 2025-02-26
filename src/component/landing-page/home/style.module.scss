@@ -1,14 +1,21 @@
 @import '@styles/variables';
 
-.button {
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
     cursor: pointer;
     background-color: white;
     color: black;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 
     &:active {
-        transform: scale(0.9);
+        transform: scale(0.95);
     }
 
     &.primary {
@@ -20,152 +27,56 @@
 
 .homeSection {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
-    padding: 1rem;
+    max-height: 100vh;
+    overflow: hidden;
     background: linear-gradient(
                     180deg,
                     $background-color 0%,
                     $lighter-background-color 100%
     );
-
-    .introText {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        z-index: $intro-text-z-index;
-
-        .hiContainer {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            font-size: 2rem;
-
-            .name {
-                width: min-content;
-                color: $primary-color;
-                font-weight: $font-weight-bold;
-                font-size: 7rem;
-            }
-        }
-
-        .work {
-            position: relative;
-            font-family: 'Source Code Pro', monospace;
-            font-weight: $font-weight-medium;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            width: fit-content;
-            border-right: 5px solid $primary-color;
-            animation: blink 0.75s ease infinite;
-        }
-
-        .buttons {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        @media screen and (width <= 768px) {
-            .hiContainer {
-                font-size: 1.5rem;
-
-                .name {
-                    font-size: 5rem;
-                }
-            }
-
-            .work {
-                font-size: 1.2rem;
-                font-weight: $font-weight-light;
-            }
-        }
-
-        @media screen and (width <= 640px) and (width >= 481px) {
-            width: 180px;
-
-            .hiContainer {
-                font-size: 1rem;
-
-                .name {
-                    font-size: 3rem;
-                }
-            }
-
-            .work {
-                font-size: 1rem;
-            }
-
-            .buttons {
-                .button {
-                    font-size: 0.6rem;
-                    padding: 0.2rem 0.5rem;
-                }
-            }
-        }
-
-        @media screen and (width <= 320px) {
-            .hiContainer {
-                .name {
-                    font-size: 3.5rem;
-                }
-            }
-
-            .work {
-                font-weight: $font-weight-light;
-                font-size: 0.8rem;
-            }
-
-            .buttons {
-                .button {
-                    font-size: 0.5rem;
-                    padding: 0.25rem 0.5rem;
-                }
-            }
-        }
-    }
-
-    .introImg {
-        width: 50%;
-
-        :global(#person) {
-            animation: float-up 2s infinite alternate linear;
-            display: block;
-        }
-
-        @media screen and (width <= 480px) {
-            display: none;
-        }
-
-        @media screen and (width <= 640px) and (width >= 321px) {
-            width: 35%;
-        }
-    }
 }
 
-@keyframes float-up {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-1rem);
-    }
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
 }
 
-@keyframes blink {
-    to {
-        border-color: #00ff2900;
-    }
+.hi {
+    font-size: 1.5rem;
+    font-weight: normal;
+    opacity: 0.7;
+    letter-spacing: 2px;
 }
 
-@keyframes blink {
-    from {
-        border-right-color: $primary-color;
-    }
+.name {
+    font-size: 10rem;
+    color: $primary-color;
+}
 
-    to {
-        border-right-color: transparent;
+.work {
+    font-weight: normal;
+    font-size: 2rem;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+.scrollDownBtn {
+    padding: 0;
+    margin: 0 0 1rem;
+    background: none;
+    color: white;
+    opacity: .8;
+    transition: opacity 0.3s;
+
+    &:hover, &:focus, &:active {
+        transform: none;
+        opacity: 1;
     }
 }

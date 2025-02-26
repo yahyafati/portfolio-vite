@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import StandingManSVG from '@svg/Home.svg?react';
 import { Link } from 'react-router-dom';
 
 import style from './style.module.scss';
 import classNames from 'classnames';
 import { FormattedMessage, useIntl } from 'react-intl';
+import { FaAngleDoubleDown } from 'react-icons/fa';
 
 const MY_TITLES_LENGTH = 4;
 const Home = () => {
@@ -45,37 +45,25 @@ const Home = () => {
 
     return (
         <div id="homeSection" className={style.homeSection}>
-            <div className={style.introText}>
-                <div className={style.hiContainer}>
-                    <FormattedMessage
-                        id="landing.home.heroText"
-                        values={{
-                            name: (
-                                <span className={style.name}>Yahya Fati</span>
-                            ),
-                        }}
-                    />
-                </div>
-                <p className={style.work}>
-                    {MY_TITLE[currentWordIndex].slice(0, currentLetterIndex)}
-                </p>
-                <div className={style.buttons}>
-                    <Link
-                        to={'/contact'}
-                        className={classNames(style.button, style.primary)}
-                    >
-                        {intlFmt({ id: 'landing.home.contactMe' })}
+            <div className={style.mainContent}>
+                <p className={style.hi}>Hi, I'm </p>
+                <h1 className={style.name}>John Doe</h1>
+                <h2 className={style.work}>
+                    Consultant, Developer, and Designer
+                </h2>
+                <button className={classNames(style.primary)}>
+                    <Link to="/contact">
+                        <FormattedMessage
+                            id="landing.home.contactMe"
+                            defaultMessage="Contact Me"
+                        />
                     </Link>
-                    <a
-                        href={'/Resume.pdf'}
-                        target={'_blank'}
-                        className={classNames(style.button)}
-                    >
-                        {intlFmt({ id: 'landing.home.getResume' })}
-                    </a>
-                </div>
+                </button>
             </div>
-            <StandingManSVG className={style.introImg} />
+
+            <button className={style.scrollDownBtn}>
+                Scroll Down <FaAngleDoubleDown />
+            </button>
         </div>
     );
 };
