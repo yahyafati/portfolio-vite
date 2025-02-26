@@ -2,7 +2,7 @@ import SocialMediaIcons from './social-media-icons';
 
 import style from './style.module.scss';
 import { useIntl } from 'react-intl';
-import ShallWe from '@/component/landing-page/contact/shallWe';
+import ShallWe from './shall-we';
 
 const Contact = () => {
     const intl = useIntl();
