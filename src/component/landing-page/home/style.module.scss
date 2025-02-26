@@ -87,6 +87,12 @@
     opacity: 0;
 }
 
+.ctaContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 @include screen-under($breakpoint-lg) {
     .name {
         font-size: 6rem;

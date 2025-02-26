@@ -9,15 +9,11 @@
   },
   "landing": {
     "home": {
-      "heroText": "Merhaba, Ben {name}",
-      "titles": {
-        "title1": "Full Stack Yazılımcı",
-        "title2": "React Yazılımcı",
-        "title3": "Java Yazılımcı",
-        "title4": "Freelancer"
-      },
+      "hi": "Merhaba, Ben ",
+      "work": "Konsültan, Geliştirici ve Tasarımcı",
       "contactMe": "İletişime Geç",
-      "getResume": "CV'yi İndir"
+      "getResume": "CV'yi İndir",
+      "scrollDown": "Aşağı Kaydır"
     },
     "about": {
       "body": {

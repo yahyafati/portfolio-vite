@@ -9,15 +9,11 @@
   },
   "landing": {
     "home": {
-      "heroText": "Hi, I'm {name}",
-      "titles": {
-        "title1": "Full Stack Developer",
-        "title2": "React Developer",
-        "title3": "Java Developer",
-        "title4": "Freelancer"
-      },
+      "hi": "Hi, I'm ",
+      "work": "Consultant, Developer, and Designer",
       "contactMe": "Contact Me",
-      "getResume": "Get Resume"
+      "getResume": "Get Resume",
+      "scrollDown": "Scroll Down"
     },
     "about": {
       "body": {
