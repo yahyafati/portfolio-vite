@@ -60,7 +60,7 @@ interface TestimonialProps {}
 
 const Testimonial: React.FC<TestimonialProps> = () => {
     return (
-        <div id="testimonialSection" className={style.testimonialSection}>
+        <div id="testimonials" className={style.testimonialSection}>
             <h2>
                 <FormattedMessage
                     id="landing.testimonials.title.base"

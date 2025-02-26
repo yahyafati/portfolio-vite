@@ -8,7 +8,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 const Services = () => {
     const { formatMessage: intlFmt } = useIntl();
     return (
-        <div id="servicesSection" className={style.servicesSection}>
+        <div id="services" className={style.servicesSection}>
             <h2>
                 <FormattedMessage
                     id="landing.service.title.base"

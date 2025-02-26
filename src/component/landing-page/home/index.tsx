@@ -47,7 +47,7 @@ const Home = () => {
     }, [currentLetterIndex]);
 
     return (
-        <div id="homeSection" className={style.homeSection}>
+        <div id="home" className={style.homeSection}>
             <div className={style.mainContent}>
                 <p className={style.hi}>Hi, I'm </p>
                 <h1 className={style.name}>John Doe</h1>
@@ -69,6 +69,11 @@ const Home = () => {
                     [style.scrollDownBtnHidden]:
                         scrollY > HIDE_SCROLL_DOWN_BTN_Y_THRESHOLD,
                 })}
+                onClick={() => {
+                    document
+                        .getElementById('about')
+                        ?.scrollIntoView({ behavior: 'smooth' });
+                }}
             >
                 Scroll Down <FaAngleDoubleDown />
             </button>

@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 
 const ShallWe = () => {
     return (
-        <div id="shallWeSection" className={style.shallWeSection}>
+        <div id="contact" className={style.shallWeSection}>
             <div className={style.content}>
                 <hr className={style.hLine} />
                 <div className={style.textContainer}>

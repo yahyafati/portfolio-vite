@@ -1,0 +1,33 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    gap: .5rem;
+    background: none;
+    transition: all .3s;
+    opacity: .5;
+}
+
+.item:hover {
+    opacity: 1;
+}
+
+.icon {
+    font-size: 120%;
+}
+
+.title {
+    display: none;
+    transition: all .3s;
+
+}
+
+.title.show {
+    display: block;
+}
+
+.item:hover .title {
+    font-weight: 700;
+    letter-spacing: 1px;
+}

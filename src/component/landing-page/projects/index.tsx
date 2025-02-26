@@ -13,7 +13,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 const Projects = () => {
     const intl = useIntl();
     return (
-        <div id="projectSection" className={style.projectSection}>
+        <div id="projects" className={style.projectSection}>
             <h2>
                 <FormattedMessage
                     id="landing.projects.title.base"

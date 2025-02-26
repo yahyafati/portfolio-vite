@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 const About = () => {
     return (
-        <div id="aboutSection" className={style.aboutSectionWrapper}>
+        <div id="about" className={style.aboutSectionWrapper}>
             <div className={style.aboutSection}>
                 <div className={style.imgContainer}>
                     <HiFromDev className={style.aboutImg} />
