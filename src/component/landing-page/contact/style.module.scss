@@ -1,5 +1,12 @@
 @import '@styles/variables';
 
+.contactSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+}
+
 .content {
     display: flex;
     flex-direction: column;

@@ -26,6 +26,24 @@ const IDS = [
 ];
 const LandingPage: React.FC<LandingPageProps> = () => {
     const [currentSection, setCurrentSection] = React.useState(IDS[0]);
+    const timeoutRef = React.useRef<number | null>(null);
+
+    React.useEffect(() => {
+        const currentSectionElement = document.getElementById(currentSection);
+        if (!currentSectionElement) return;
+
+        timeoutRef.current = window.setTimeout(() => {
+            window.location.hash = currentSection;
+            currentSectionElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }, 500);
+
+        return () => {
+            if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+        };
+    }, [currentSection]);
 
     useScrollEffect(() => {
         const maxViewableSection = IDS.reduce((acc, id) => {
