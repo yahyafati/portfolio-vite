@@ -6,42 +6,44 @@ import { FaHandsClapping } from 'react-icons/fa6';
 
 import styles from './style.module.scss';
 
-interface LineOfContentProps {}
+interface LineOfContentProps {
+    currentSection: string;
+}
 
 const items = [
     {
         Icon: FaHome,
         title: 'Home',
-        href: '#home',
+        id: 'home',
     },
     {
         Icon: FaInfoCircle,
         title: 'About',
-        href: '#about',
+        id: 'about',
     },
     {
         Icon: MdMiscellaneousServices,
         title: 'Services',
-        href: '#services',
+        id: 'services',
     },
     {
         Icon: FaProjectDiagram,
         title: 'Projects',
-        href: '#projects',
+        id: 'projects',
     },
     {
         Icon: FaHandsClapping,
         title: 'Testimonials',
-        href: '#testimonials',
+        id: 'testimonials',
     },
     {
         Icon: MdEmail,
         title: 'Contact',
-        href: '#contact',
+        id: 'contact',
     },
 ];
 
-const LineOfContent: React.FC<LineOfContentProps> = () => {
+const LineOfContent: React.FC<LineOfContentProps> = ({ currentSection }) => {
     const [hovered, setHovered] = React.useState(false);
 
     function handleMouseEnter() {
@@ -59,7 +61,12 @@ const LineOfContent: React.FC<LineOfContentProps> = () => {
             onMouseLeave={handleMouseLeave}
         >
             {items.map((item, index) => (
-                <ContentItem key={index} {...item} showLabel={hovered} />
+                <ContentItem
+                    key={index}
+                    {...item}
+                    showLabel={hovered}
+                    current={currentSection === item.title.toLowerCase()}
+                />
             ))}
         </div>
     );

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export function useScrollY() {
     const [scrollY, setScrollY] = useState(0);
@@ -16,6 +16,25 @@ export function useScrollY() {
     }, []);
 
     return scrollY;
+}
+
+export function useScrollEffect(
+    callback: (scrollY: number) => void,
+    deps: React.DependencyList
+) {
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            callback(scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, deps);
 }
 
 type ScrollDirection = 'up' | 'down';

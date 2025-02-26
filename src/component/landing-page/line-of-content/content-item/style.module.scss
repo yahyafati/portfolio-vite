@@ -1,3 +1,5 @@
+@import "@styles/variables";
+
 .item {
     display: flex;
     align-items: center;
@@ -7,6 +9,11 @@
     background: none;
     transition: all .3s;
     opacity: .5;
+}
+
+.item.active {
+    opacity: 1;
+    color: $primary-color;
 }
 
 .item:hover {

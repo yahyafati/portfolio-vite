@@ -7,18 +7,25 @@ import classNames from 'classnames';
 interface ContentItemProps {
     Icon: IconType;
     title: string;
+    current?: boolean;
     showLabel?: boolean;
-    href?: string;
+    id?: string;
 }
 
 const ContentItem: React.FC<ContentItemProps> = ({
     Icon,
     title,
-    href,
+    id,
     showLabel,
+    current,
 }) => {
     return (
-        <a className={style.item} href={href}>
+        <a
+            className={classNames(style.item, {
+                [style.active]: current,
+            })}
+            href={`#${id}`}
+        >
             <span
                 className={classNames(style.title, {
                     [style.show]: showLabel,
