@@ -50,11 +50,11 @@ const Home = () => {
         <div id="home" className={style.homeSection}>
             <div className={style.mainContent}>
                 <p className={style.hi}>Hi, I'm </p>
-                <h1 className={style.name}>John Doe</h1>
+                <h1 className={style.name}>Yahya Haji</h1>
                 <h2 className={style.work}>
                     Consultant, Developer, and Designer
                 </h2>
-                <button className={classNames(style.primary)}>
+                <button className={classNames(style.cta, style.primary)}>
                     <Link to="/contact">
                         <FormattedMessage
                             id="landing.home.contactMe"
@@ -65,7 +65,7 @@ const Home = () => {
             </div>
 
             <button
-                className={classNames(style.scrollDownBtn, {
+                className={classNames(style.cta, style.scrollDownBtn, {
                     [style.scrollDownBtnHidden]:
                         scrollY > HIDE_SCROLL_DOWN_BTN_Y_THRESHOLD,
                 })}

@@ -1,4 +1,5 @@
 @import "@/style/variables";
+@import "@/style/breakpoints";
 
 .testimonialContainer {
     display: flex;
@@ -16,54 +17,60 @@
     width: 70%;
     padding: 1.5rem 1rem;
     background-color: $card-background;
+}
 
-    img.profileImg {
-        width: 6rem;
+.testimonialItem img.profileImg {
+    width: 6rem;
+}
+
+.body {
+    font-weight: $font-weight-light;
+    width: 80%;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.credit {
+    text-align: center;
+    font-size: 1.3rem;
+
+    .by {
+        font-weight: $font-weight-semi-bold;
+    }
+
+    .relation {
+        font-weight: $font-weight-light;
+    }
+}
+
+@include screen-under($breakpoint-md) {
+    .testimonialItem {
+        flex-grow: 1;
+    }
+}
+
+@include screen-under($breakpoint-sm) {
+    .testimonialItem {
+        flex-grow: 1;
+        margin: 0 0.25rem;
+    }
+
+    .profileImg {
+        width: 4rem;
     }
 
     .body {
-        font-weight: $font-weight-light;
-        width: 80%;
-        text-align: center;
+        width: 100%;
+        font-size: 1.2rem;
     }
 
     .credit {
-        text-align: center;
-
         .by {
-            font-weight: $font-weight-semi-bold;
+            font-size: 1.36rem;
         }
 
         .relation {
-            font-weight: $font-weight-light;
-        }
-    }
-
-    @media screen and (width <= 640px) {
-        flex-grow: 1;
-    }
-
-    @media screen and (width <= 320px) {
-        flex-grow: 1;
-        margin: 0 0.25rem;
-
-        .profileImg {
-            width: 4rem;
-        }
-
-        .body {
-            width: 100%;
-            font-size: 0.8rem;
-        }
-
-        .credit {
-            .by {
-                font-size: 0.85rem;
-            }
-
-            .relation {
-                font-size: 0.85rem;
-            }
+            font-size: 1.36rem;
         }
     }
 }

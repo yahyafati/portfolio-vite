@@ -1,0 +1,94 @@
+@import '@styles/variables';
+@import '@styles/breakpoints';
+@import '@styles/animations';
+
+.shallWeSection {
+    display: flex;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.content {
+    position: sticky;
+    top: 20rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hLine {
+    background-color: white;
+    flex-grow: 1;
+    height: 1px;
+}
+
+.textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background-color: white;
+    color: $background-color;
+    padding: 1.5rem 2rem;
+    border-radius: 10rem;
+    animation: glow 3s infinite;
+}
+
+.shallWe {
+    font-weight: $font-weight-light;
+    font-size: 1.5rem;
+}
+
+.letsGo {
+    cursor: pointer;
+    background-color: $background-color;
+    font-weight: $font-weight-light;
+    color: white;
+    padding: 0.5rem 2.5rem;
+    border-radius: 10rem;
+    font-size: 2rem;
+    border: 2px solid transparent;
+
+    &:active, &:hover {
+        background-color: white;
+        color: $background-color;
+        border-color: $background-color;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+@include screen-under($breakpoint-md) {
+    .textContainer {
+        //padding: 0.75rem 1.5rem;
+    }
+
+    .shallWe {
+        font-size: 1.3rem;
+    }
+
+    .letsGo {
+        font-size: 1.3rem;
+        padding: 0.25rem 1rem;
+    }
+}
+
+@include screen-under($breakpoint-sm) {
+    .textContainer {
+        padding: 0.5rem 1rem;
+    }
+
+    .shallWe {
+        font-size: 1rem;
+    }
+
+    .letsGo {
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+
+}

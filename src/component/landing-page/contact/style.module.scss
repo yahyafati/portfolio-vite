@@ -1,6 +1,6 @@
 @import '@styles/variables';
 
-.contactSection {
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,18 +17,11 @@
     }
 
 
-    .credit {
-        font-weight: $font-weight-light;
-        font-size: 0.8rem;
-    }
-
     @media screen and (width <= 320px) {
         .name {
             font-size: 1rem;
         }
-        
-        .credit {
-            font-size: 0.75rem;
-        }
+
+
     }
 }

@@ -26,11 +26,11 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
                 />
                 <div className={style.titleContainer}>
                     <h5 className={style.title}>{title}</h5>
-                    <a className={style.gitIcon} href={href}>
+                    <a className={style.icon} href={href}>
                         <AiFillGithub />
                     </a>
                     {link && (
-                        <a className={style.gitIcon} href={link}>
+                        <a className={style.icon} href={link}>
                             <AiFillChrome />
                         </a>
                     )}

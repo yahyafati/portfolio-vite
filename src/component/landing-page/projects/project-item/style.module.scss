@@ -1,4 +1,5 @@
 @import "@/style/variables";
+@import "@/style/breakpoints";
 
 .projectItemContainer {
     display: flex;
@@ -12,54 +13,59 @@
     cursor: grab;
     border-radius: 5px;
     background-color: $card-background;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     width: 70%;
+}
 
-    .projectIcon {
-        height: 10rem;
-        width: 15rem;
+.projectIcon {
+    height: 16rem;
+    width: 24rem;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title {
+    font-weight: $font-weight-regular;
+    font-size: 2.4rem;
+}
+
+.icon {
+    display: flex;
+    font-size: 2.4rem;
+
+    &:hover {
+        color: $primary-color;
     }
+}
 
-    .titleContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.25rem;
 
-        .title {
-            font-weight: $font-weight-regular;
-            font-size: 1.5rem;
-        }
-
-        .gitIcon {
-            display: flex;
-            font-size: 1.5rem;
-
-            &:hover {
-                color: $primary-color;
-            }
-        }
-    }
-
-    @media screen and (width <= 640px) {
+@include screen-under($breakpoint-md) {
+    .projectItem {
         flex-grow: 1;
     }
+}
 
-    @media screen and (width <= 320px) {
+@include screen-under($breakpoint-sm) {
+    .projectItem {
         flex-grow: 1;
         flex-direction: column;
         justify-content: center;
         gap: 2rem;
+    }
 
-        .projectIcon {
-            height: 5rem;
-            width: 10rem;
-        }
+    .projectIcon {
+        height: 8rem;
+        width: 16rem;
+    }
 
-        .title {
-            font-size: 1rem;
-            font-weight: $font-weight-light;
-        }
+    .title {
+        font-size: 1.6rem;
+        font-weight: $font-weight-light;
     }
 }

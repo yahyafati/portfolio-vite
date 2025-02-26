@@ -1,7 +1,8 @@
 import SocialMediaIcons from './social-media-icons';
 
 import style from './style.module.scss';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
+import ShallWe from '@/component/landing-page/contact/shallWe';
 
 const Contact = () => {
     const intl = useIntl();
@@ -10,18 +11,13 @@ const Contact = () => {
         ' ' +
         intl.formatMessage({ id: 'lastName' });
     return (
-        <footer id="contactSection" className={style.contactSection}>
-            <h2 className={style.name}>{fullName}</h2>
-            <SocialMediaIcons />
-            <h6 className={style.credit}>
-                <FormattedMessage
-                    id="landing.footer.credit"
-                    values={{
-                        designer: intl.formatMessage({ id: 'firstName' }),
-                    }}
-                />
-            </h6>
-        </footer>
+        <div id="contact" className={style.contactSection}>
+            <ShallWe />
+            <div className={style.content}>
+                <h2 className={style.name}>{fullName}</h2>
+                <SocialMediaIcons />
+            </div>
+        </div>
     );
 };
 

@@ -1,78 +1,6 @@
 @import '@styles/variables';
 @import '@styles/animations';
-
-
-.aboutSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem 3rem;
-    border-radius: 0 0 100px 100px;
-
-    @media screen and (width <= 768px) {
-        padding: 5rem 2rem;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-    }
-
-    @media screen and (width <= 320px) {
-        padding: 5rem 1rem;
-        flex-direction: column;
-        justify-content: center;
-    }
-}
-
-.aboutSection .imgContainer {
-    text-align: center;
-    min-width: 50%;
-
-    .aboutImg {
-        width: 80%;
-
-        :global(#arm) {
-            position: relative;
-            display: inline-block;
-            animation: wave-arms 1s infinite;
-        }
-    }
-}
-
-.aboutSection .aboutText {
-    text-align: center;
-
-    h2 {
-        font-size: 2.5rem;
-        font-weight: $font-weight-medium;
-
-        .love {
-            font-weight: $font-weight-bold;
-            color: pink;
-        }
-
-        .code {
-            font-weight: $font-weight-bold;
-        }
-
-        @media screen and (width <= 320px) {
-            font-size: 1.5rem;
-        }
-    }
-
-    p.about {
-        font-weight: $font-weight-light;
-        font-size: 1.2rem;
-
-        .passionate {
-            color: $primary-color;
-            font-weight: $font-weight-bold;
-        }
-
-        @media screen and (width <= 320px) {
-            font-size: 0.85rem;
-        }
-    }
-}
+@import '@styles/breakpoints';
 
 .aboutSectionWrapper {
     display: flex;
@@ -84,15 +12,75 @@
                     $lighter-background-color 0%,
                     $background-color 100%
     );
+}
+
+.aboutSection {
+    max-width: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 100px 100px;
+}
+
+.aboutSection .imgContainer {
+    text-align: center;
+    min-width: 50%;
+    height: 50rem;
+
+    .aboutImg {
+        height: 100%;
+        width: 75%;
+    }
+}
+
+.aboutSection .aboutText {
+    text-align: center;
+}
+
+.aboutTitle {
+    font-size: 4rem;
+    font-weight: $font-weight-medium;
+    transition: all 0.3s ease;
+
+    .love {
+        font-weight: $font-weight-bold;
+        color: pink;
+    }
+
+    .code {
+        font-weight: $font-weight-bold;
+    }
+}
+
+@include screen-under($breakpoint-sm) {
+    .aboutSection {
+        padding: 5rem 1rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .aboutTitle {
+        font-size: 3rem;
+    }
+}
+
+@include screen-under($breakpoint-md) {
+    .aboutSection .imgContainer {
+        width: 100%;
+        height: auto;
+    }
+
+    .aboutSection .imgContainer .aboutImg {
+        width: 100%;
+    }
+
+    .aboutSection {
+        padding: 5rem 2rem;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
 
 }
 
-@keyframes wave-arms {
-    0% {
-        transform: rotate(0deg) translate(0, 0);
-    }
 
-    100% {
-        transform: rotate(-10deg) translate(-50px, -0);
-    }
-}

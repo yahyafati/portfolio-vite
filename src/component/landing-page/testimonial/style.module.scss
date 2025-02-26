@@ -1,4 +1,13 @@
 @import '@styles/variables';
+@import '@styles/breakpoints';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 5rem;
+}
 
 .testimonialSection {
     display: flex;
@@ -6,30 +15,47 @@
     justify-content: center;
     align-items: center;
     padding: 3rem;
-    height: 100vh;
+    max-width: min(100rem, 100%);
+}
+
+.title {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: $font-weight-medium;
+    transition: all 0.3s ease;
+
+    strong {
+        color: $primary-color;
+    }
 
     @media screen and (width <= 320px) {
+        font-size: 1.5rem;
+    }
+}
+
+.testimonials {
+    overflow-x: auto;
+    user-select: none;
+    padding: 1rem;
+    width: 100%;
+}
+
+@include screen-under($breakpoint-md) {
+    .testimonialSection {
+        padding: 5rem 1rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@include screen-under($breakpoint-sm) {
+    .testimonialSection {
         padding: 5rem 0.5rem;
     }
 
-    h2 {
-        text-align: center;
-        font-size: 2.5rem;
-        font-weight: $font-weight-medium;
-
-        strong {
-            color: $primary-color;
-        }
-
-        @media screen and (width <= 320px) {
-            font-size: 1.5rem;
-        }
-    }
-
-    .testimonials {
-        overflow-x: auto;
-        user-select: none;
-        padding: 1rem;
-        width: 100%;
+    .title {
+        font-size: 2rem;
     }
 }

@@ -4,15 +4,15 @@ $lighter-bg-color: lighten($lighter-background-color, 20%);
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 0.5rem $lighter-bg-color;
+        box-shadow: 0 0 1rem $lighter-bg-color;
     }
 
     50% {
-        box-shadow: 0 0 0.75rem $lighter-bg-color;
+        box-shadow: 0 0 1.5rem $lighter-bg-color;
     }
 
     100% {
-        box-shadow: 0 0 0.5rem $lighter-bg-color;
+        box-shadow: 0 0 1rem $lighter-bg-color;
     }
 }
 

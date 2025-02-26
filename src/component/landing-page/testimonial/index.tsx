@@ -60,33 +60,38 @@ interface TestimonialProps {}
 
 const Testimonial: React.FC<TestimonialProps> = () => {
     return (
-        <div id="testimonials" className={style.testimonialSection}>
-            <h2>
-                <FormattedMessage
-                    id="landing.testimonials.title.base"
-                    values={{
-                        kindWords: (
-                            <strong>
-                                <FormattedMessage id="landing.testimonials.title.kindWords" />
-                            </strong>
-                        ),
-                    }}
-                />
-            </h2>
-            <Carousel
-                className={style.testimonials}
-                autoPlay={false}
-                infiniteLoop={true}
-                showStatus={false}
-                showArrows={false}
-                showIndicators={false}
-                showThumbs={false}
-                emulateTouch={true}
-            >
-                {SAMPLE_TESTIMONIALS.map((testimonial, index) => (
-                    <TestimonialItem key={index} testimonial={testimonial} />
-                ))}
-            </Carousel>
+        <div id="testimonials" className={style.container}>
+            <div className={style.testimonialSection}>
+                <h2 className={style.title}>
+                    <FormattedMessage
+                        id="landing.testimonials.title.base"
+                        values={{
+                            kindWords: (
+                                <strong>
+                                    <FormattedMessage id="landing.testimonials.title.kindWords" />
+                                </strong>
+                            ),
+                        }}
+                    />
+                </h2>
+                <Carousel
+                    className={style.testimonials}
+                    autoPlay={true}
+                    infiniteLoop={true}
+                    showStatus={false}
+                    showArrows={false}
+                    showIndicators={false}
+                    showThumbs={false}
+                    emulateTouch={true}
+                >
+                    {SAMPLE_TESTIMONIALS.map((testimonial, index) => (
+                        <TestimonialItem
+                            key={index}
+                            testimonial={testimonial}
+                        />
+                    ))}
+                </Carousel>
+            </div>
         </div>
     );
 };

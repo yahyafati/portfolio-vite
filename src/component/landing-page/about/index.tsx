@@ -10,7 +10,7 @@ const About = () => {
                     <HiFromDev className={style.aboutImg} />
                 </div>
                 <div className={style.aboutText}>
-                    <h2>
+                    <h2 className={style.aboutTitle}>
                         <FormattedMessage id="landing.about.body.base" />
                     </h2>
                 </div>
