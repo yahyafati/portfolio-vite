@@ -42,11 +42,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         >
             <div className={classNames(style.frontside, className)}>
                 {servicesMap[type]}
-                <h3>{title}</h3>
-                <p>{body}</p>
+                <h3 className={style.title}>{title}</h3>
+                <p className={style.body}>{body}</p>
             </div>
             <div className={style.backside}>
-                {title}
+                <h3 className={style.title}>{title}</h3>
 
                 <p className={style.description}>{detail}</p>
             </div>
