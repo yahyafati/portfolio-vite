@@ -1,0 +1,24 @@
+$breakpoint-xs: 0px;
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+
+@mixin screen-under($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin screen-over($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin screen-between($min-breakpoint, $max-breakpoint) {
+    @media screen and (min-width: $min-breakpoint) and (max-width: $max-breakpoint) {
+        @content;
+    }
+}
+
